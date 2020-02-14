@@ -1,6 +1,7 @@
 const express = require("express");
-const server = express();
 const middleware = require("./middleware");
+
+const server = express();
 
 middleware(server);
 
