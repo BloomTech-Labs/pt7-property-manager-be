@@ -1,10 +1,10 @@
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex("workOrders")
+  return knex("workorders")
     .del()
     .then(function() {
       // Inserts seed entries
-      return knex("workOrders").insert([
+      return knex("workorders").insert([
         {
           work_order_type: "repair",
           work_order_date: "2020-02-11",

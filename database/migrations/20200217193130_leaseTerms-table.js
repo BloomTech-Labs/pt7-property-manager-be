@@ -1,5 +1,5 @@
 exports.up = async function(knex) {
-  await knex.schema.createTable("leaseTerms", tbl => {
+  await knex.schema.createTable("leaseterms", tbl => {
     tbl.increments();
     tbl.date("payment_due_date").notNullable();
     tbl.date("lease_start_date").notNullable();
@@ -11,5 +11,5 @@ exports.up = async function(knex) {
 };
 
 exports.down = function(knex) {
-  return knex.schema.dropTableIfExists("leaseTerms");
+  return knex.schema.dropTableIfExists("leaseterms");
 };

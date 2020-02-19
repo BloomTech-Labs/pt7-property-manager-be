@@ -11,7 +11,7 @@ exports.up = async function(knex) {
       .unsigned()
       .notNullable()
       .references("id")
-      .inTable("leaseTerms");
+      .inTable("leaseterms");
   });
 };
 

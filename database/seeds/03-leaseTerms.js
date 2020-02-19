@@ -1,10 +1,10 @@
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex("leaseTerms")
+  return knex("leaseterms")
     .del()
     .then(function() {
       // Inserts seed entries
-      return knex("leaseTerms").insert([
+      return knex("leaseterms").insert([
         {
           payment_due_date: "2020-02-11",
           lease_start_date: "2020-02-11",

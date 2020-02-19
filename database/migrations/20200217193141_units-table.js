@@ -13,7 +13,7 @@ exports.up = async function(knex) {
       .unsigned()
       .notNullable()
       .references("id")
-      .inTable("leaseTerms");
+      .inTable("leaseterms");
     tbl
       .integer("property_id")
       .unsigned()
