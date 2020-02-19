@@ -9,7 +9,7 @@ exports.seed = function(knex) {
         {
           email: "fake@fake.com",
           password: bcrypt.hashSync("user1", 16),
-          phoneNumber: 1234567890,
+          phoneNumber: "1234567890",
           firstName: "Mister",
           lastName: "Rogers",
           role: "Manager"
@@ -17,7 +17,7 @@ exports.seed = function(knex) {
         {
           email: "fake2@fake.com",
           password: bcrypt.hashSync("user2", 16),
-          phoneNumber: 1345678901,
+          phoneNumber: "1345678901",
           firstName: "Broke",
           lastName: "Millennial",
           role: "Renter"

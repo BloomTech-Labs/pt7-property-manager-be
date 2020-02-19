@@ -6,7 +6,7 @@ exports.up = async function(knex) {
       .notNullable()
       .unique();
     tbl.string("password", 128).notNullable();
-    tbl.integer("phoneNumber");
+    tbl.string("phoneNumber", 12);
     tbl.string("firstName", 128).notNullable();
     tbl.string("lastName", 128).notNullable();
     tbl.string("role", 128).notNullable();
