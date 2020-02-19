@@ -1,11 +1,21 @@
-
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex('workOrders').del()
-    .then(function () {
+  return knex("workOrders")
+    .del()
+    .then(function() {
       // Inserts seed entries
-      return knex('workOrders').insert([
-        {id: 1, work_order_type: 'repair', work_order_date: '01011981', priority: 'high', problem_description: 'poo everywhere', completion_date: '01011981', start_date: '01011981', permission_to_enter: 'yes', vendor: 'poop r us', units_id: 1}
+      return knex("workOrders").insert([
+        {
+          work_order_type: "repair",
+          work_order_date: "2020-02-11",
+          start_date: "2020-02-12",
+          completion_date: "2020-02-14",
+          priority: "high",
+          problem_description: "poo everywhere",
+          permission_to_enter: "yes",
+          vendor: "poop r us",
+          units_id: 1
+        }
       ]);
     });
 };
