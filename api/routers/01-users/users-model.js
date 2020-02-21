@@ -4,66 +4,55 @@ const db = require("../../../database/db-config.js");
 module.exports = {
   addUser,
   findAllUser,
-  findManger,
-  findRenter,
-  findByManagerId,
-  findByRenterId,
+  removeUser,
+  findUserByRole,
+  findUserById,
   updateManager,
-  updateRenter,
-  removeUser
+  updateRenter
 };
 
 // ALL USER
 
 function addUser(user) {
+  // Adds a user
   return db("user")
     .insert(user, "id")
     .then(ids => ({ id: ids[0] }));
 }
 
 function findAllUser() {
+  // Gets all users
   return db("user");
 }
 
 function removeUser(id) {
+  // Removes a user by id
   return db("user")
     .where({ id })
     .delete();
 }
 
-// MANAGER
-
-function findManger(filter) {
-  return db("user").where(filter);
+function findUserByRole(role) {
+  // Gets all users by role
+  return db("user").where({ role });
 }
 
-function findByManagerId(filter) {
+function findUserById(id) {
+  // Gets user by id
   return db("user")
     .where({ id })
     .first();
 }
 
+// These are seperated for Auth reasons
 function updateManager(changes, id) {
+  // Updates manager profile
   return db("user")
     .where({ id })
     .update(changes);
 }
-
-// RENTER
-
-function findRenter(filter) {
-  return db("user").where(filter);
-}
-
-// Questions whether or not we need both.
-
-function findByRenterId(id) {
-  return db("user")
-    .where({ id })
-    .first();
-}
-
 function updateRenter(changes, id) {
+  // Updates renter profile
   return db("user")
     .where({ id })
     .update(changes);
