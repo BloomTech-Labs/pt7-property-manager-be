@@ -4,6 +4,13 @@
 
 🚫 Each student has a required minimum number of meaningful PRs each week per the rubric.  Contributing to docs does NOT count as a PR to meet your weekly requirements.
 
+
+# Badges
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/fc736139272b3e317155/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/pt7-property-manager-be/maintainability)
+
+[![Test Coverage](https://api.codeclimate.com/v1/badges/fc736139272b3e317155/test_coverage)](https://codeclimate.com/github/Lambda-School-Labs/pt7-property-manager-be/test_coverage)
+
 # API Documentation
 
 #### 1️⃣ Backend delpoyed at [🚫name service here](🚫add URL here) <br>
