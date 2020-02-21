@@ -2,14 +2,14 @@
 const db = require("../../../database/db-config.js");
 
 module.exports = {
-  addUser,
-  findAllUsers,
-  findBy,
-  removeUser,
-  findUserByRole,
-  findUserById,
-  updateManager,
-  updateRenter
+  addUser, // Adds a user
+  findAllUsers, // Gets all Users
+  findBy, // Finds User by filter
+  removeUser, // Removes a user by id
+  findUsersByRole, // Gets all users by role
+  findUserById, // Gets user by id
+  updateManager, // Updates manager profile
+  updateRenter // Updates renter profile
 };
 
 // ALL USER
@@ -22,7 +22,7 @@ function addUser(user) {
 }
 
 function findAllUsers() {
-  // Gets all users
+  // Gets all Users
   return db("user");
 }
 
@@ -38,7 +38,7 @@ function removeUser(id) {
     .delete();
 }
 
-function findUserByRole(role) {
+function findUsersByRole(role) {
   // Gets all users by role
   return db("user").where({ role });
 }
