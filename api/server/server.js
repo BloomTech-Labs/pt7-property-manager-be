@@ -3,12 +3,13 @@ const express = require("express");
 const middleware = require("./middleware");
 
 // Router Imports
-const userRouter = require("../routers/01-users");
-const propertiesRouter = require("../routers/02-properties");
-const leaseTermsRouter = require("../routers/03-leaseterms");
-const unitsRouter = require("../routers/04-units");
-const workOrdersRouter = require("../routers/05-workorders");
-const paymentsRouter = require("../routers/06-payments");
+const authRouter = requrie("../routers/00-auth/auth-router");
+const userRouter = require("../routers/01-users/users-router");
+const propertiesRouter = require("../routers/02-properties/properties-router");
+const leaseTermsRouter = require("../routers/03-leaseterms/leaseterms-router");
+const unitsRouter = require("../routers/04-units/units-router");
+const workOrdersRouter = require("../routers/05-workorders/workorders-router");
+const paymentsRouter = require("../routers/06-payments/payments-router");
 
 // Server Setup
 const server = express();
@@ -21,6 +22,7 @@ server.get("/", (req, res) => {
 });
 
 // Router Setup
+server.use("/auth", authRouter);
 server.use("/users", userRouter);
 server.use("/properties", propertiesRouter);
 server.use("/lease-terms", leaseTermsRouter);

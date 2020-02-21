@@ -1,101 +1,77 @@
-const express = require("express");
+// Router setup and model import
 
-const Manager = require("./users-model.js");
-const Renter = require("./users-model.js");
-const User = require("./users-model.js");
-
-const router = express.Router();
-
-// ALL USER
-
-router.post("/user/register", (req, res) => {
-  User.addUser(req.body)
-    .then(user => res.status(200).json(user))
-    .catch(err =>
-      res.status(500).json({ error: "Failed to register user", err })
-    );
-});
-
-router.post("/user/login", (req, res) => {
-  let { email, password } = req.body;
-
-  User.findAllUser({ email })
-    .first()
-    .then(user => res.status(200).json(user))
-    .catch(err => res.status(500).json({ error: "Failed to login", err }));
-});
-
-router.get("/users", (req, res) => {
-  User.findAllUser()
+router.get("/", (req, res) => {
+  // Get all users
+  User.findAllUsers()
     .then(users => {
-      res.json(users);
+      res.status(200).json({ users });
     })
     .catch(err =>
-      res.status(500).json({ error: "Failed to get all users", err })
+      res
+        .status(500)
+        .json({ error: "Failed to get all users", err: err.message })
     );
 });
 
-// MANAGER
-router.get("/manager/:id", (req, res) => {
+router.get("/:id", (req, res) => {
+  // Get user by ID
   const { id } = req.params;
-  Manager.findByManagerId(id)
-    .then(manager => {
-      res.status(200).json(manager);
+  User.findUserById(id)
+    .then(user => {
+      if (user) {
+        res.status(200).json(user);
+      } else {
+        res.status(400).json({ message: "Please supply a valid ID" });
+      }
     })
     .catch(err => {
-      res.status(500).json({ error: "Failed to get manager", err });
+      res.status(500).json({ error: "Failed to get user", err: err.message });
     });
 });
 
 router.put("/manager/:id", (req, res) => {
-  Manager.findByManagerId(req.params.id)
-    .then(manager => {
-      if (manager) {
-        Manager.updateManager(req.body, req.params.id).then(updated => {
-          res.json(updated);
-        });
+  // Finds manager by
+  const id = req.params.id;
+  const user = req.body;
+  User.updateManager(user, id)
+    .then(updated => {
+      if (updated) {
+        res.status(200).json({ updated });
       } else {
-        res.status(404).json({ message: "Manager doesn't exist" });
+        res.status(400).json({ message: "Please provide a valid id" });
       }
     })
-    .catch(err =>
-      res.status(500).json({ error: "Manager cannot get updated", err })
-    );
-});
-
-// RENTER
-router.get("/renter/:id", (req, res) => {
-  const { id } = req.params;
-  Renter.findByRenterId(id)
-    .then(renter => {
-      res.status(200).json(renter);
-    })
     .catch(err => {
-      res.status(500).json({ error: "Failed to get renter", err });
+      res.status(500).json({ err: err.message, message: "Error " });
     });
 });
 
 router.put("/renter/:id", (req, res) => {
-  Renter.findByRenterId(req.params.id)
-    .then(renter => {
-      if (renter) {
-        Renter.updateRenter(req.body, req.params.id).then(updated => {
-          res.json(updated);
-        });
+  // Finds renter by ID
+  const id = req.params.id;
+  const user = req.body;
+  User.updateRenter(user, id)
+    .then(updated => {
+      if (updated) {
+        res.status(200).json({ updated });
       } else {
-        res.status(404).json({ message: "Renter doesn't exist" });
+        res.status(400).json({ message: "Please provide a valid id" });
       }
     })
-    .catch(err =>
-      res.status(500).json({ error: "Renter cannot get updated", err })
-    );
+    .catch(err => {
+      res.status(500).json({ err: err.message, message: "Error " });
+    });
 });
 
 router.delete("/:id", (req, res) => {
-  User.removeUser(req.params.id)
-    .then(user => res.json({ message: `${user} has been deleted` }))
+  // Deletes User by ID
+  const id = req.params.id;
+  User.removeUser(id)
+    .then(nan =>
+      res.status(204).json({ message: `User ${id} has been deleted` })
+    )
     .catch(err =>
-      res.status.apply(500).json({ error: "Failed to delete user", err })
+      res.status(500).json({ error: "Failed to delete user", err: err.message })
     );
 });
 

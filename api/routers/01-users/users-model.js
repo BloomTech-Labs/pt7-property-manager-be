@@ -4,6 +4,7 @@ const db = require("../../../database/db-config.js");
 module.exports = {
   addUser,
   findAllUser,
+  findBy,
   removeUser,
   findUserByRole,
   findUserById,
@@ -23,6 +24,11 @@ function addUser(user) {
 function findAllUser() {
   // Gets all users
   return db("user");
+}
+
+function findBy(filter) {
+  // Finds User by filter
+  return db("user").where({ filter });
 }
 
 function removeUser(id) {
