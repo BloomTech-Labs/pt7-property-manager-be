@@ -1,3 +1,4 @@
+// Router setup and model import
 const express = require("express");
 const User = require("../01-users/users-model");
 const router = express.Router();

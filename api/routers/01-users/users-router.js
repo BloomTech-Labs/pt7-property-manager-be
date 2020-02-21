@@ -1,4 +1,7 @@
 // Router setup and model import
+const express = require("express");
+const User = require("./users-model");
+const router = express.Router();
 
 router.get("/", (req, res) => {
   // Get all users
@@ -37,7 +40,7 @@ router.get("/:id", (req, res) => {
   User.findUserById(id)
     .then(user => {
       if (user) {
-        res.status(200).json(user);
+        res.status(200).json({ user });
       } else {
         res.status(400).json({ message: "Please supply a valid ID" });
       }
@@ -60,7 +63,9 @@ router.put("/manager/:id", (req, res) => {
       }
     })
     .catch(err => {
-      res.status(500).json({ err: err.message, message: "Error " });
+      res
+        .status(500)
+        .json({ err: err.message, message: "Error updating Manager" });
     });
 });
 
@@ -77,7 +82,9 @@ router.put("/renter/:id", (req, res) => {
       }
     })
     .catch(err => {
-      res.status(500).json({ err: err.message, message: "Error " });
+      res
+        .status(500)
+        .json({ err: err.message, message: "Error updating Renter" });
     });
 });
 
