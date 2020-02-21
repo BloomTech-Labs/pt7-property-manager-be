@@ -3,7 +3,7 @@ const db = require("../../../database/db-config.js");
 
 module.exports = {
   addUser,
-  findAllUser,
+  findAllUsers,
   findBy,
   removeUser,
   findUserByRole,
@@ -21,7 +21,7 @@ function addUser(user) {
     .then(ids => ({ id: ids[0] }));
 }
 
-function findAllUser() {
+function findAllUsers() {
   // Gets all users
   return db("user");
 }
