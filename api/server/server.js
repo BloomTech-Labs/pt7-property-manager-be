@@ -3,7 +3,7 @@ const express = require("express");
 const middleware = require("./middleware");
 
 // Router Imports
-const authRouter = requrie("../routers/00-auth/auth-router");
+const authRouter = require("../routers/00-auth/auth-router");
 const userRouter = require("../routers/01-users/users-router");
 const propertiesRouter = require("../routers/02-properties/properties-router");
 const leaseTermsRouter = require("../routers/03-leaseterms/leaseterms-router");
@@ -12,22 +12,26 @@ const workOrdersRouter = require("../routers/05-workorders/workorders-router");
 const paymentsRouter = require("../routers/06-payments/payments-router");
 
 // Server Setup
-const server = express();
-middleware(server);
+const app = express();
+middleware(app);
 
 // Simple GET request
-server.get("/", (req, res) => {
+app.get("/", (req, res) => {
   console.log("It's alive!");
   res.status(200).json({ message: "It's alive!" });
 });
 
-// Router Setup
-server.use("/auth", authRouter);
-server.use("/users", userRouter);
-server.use("/properties", propertiesRouter);
-server.use("/lease-terms", leaseTermsRouter);
-server.use("/units", unitsRouter);
-server.use("/work-orders", workOrdersRouter);
-server.use("/payments", paymentsRouter);
+// Okta Setup
+app.use("/api", authRouter);
+app.use("/api/users", authRouter);
 
-module.exports = server;
+// Router Setup
+app.use("/auth", authRouter);
+app.use("/users", userRouter);
+app.use("/properties", propertiesRouter);
+// app.use("/lease-terms", leaseTermsRouter);
+// app.use("/units", unitsRouter);
+// app.use("/work-orders", workOrdersRouter);
+// app.use("/payments", paymentsRouter);
+
+module.exports = app;
