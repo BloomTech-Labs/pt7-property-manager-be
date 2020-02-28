@@ -21,6 +21,29 @@ exports.seed = function(knex) {
           firstName: "Broke",
           lastName: "Millennial",
           role: "Renter"
+        },
+        {
+          email: "sagemjordan@gmail.com",
+          password: bcrypt.hashSync("ilovelambda", 16),
+          phoneNumber: "3176088599",
+          firstName: "Sage",
+          lastName: "Jordan",
+          role: "Manager"
+        },
+        {
+          email: "genericuser@gmail.com",
+          password: bcrypt.hashSync("password", 16),
+          phoneNumber: "61824536281",
+          firstName: "Generic",
+          lastName: "User",
+          role: "Renter"
+        },
+        {
+          email: "bigbird13@gmail.com",
+          password: bcrypt.hashSync("sesamestreet", 16),
+          firstName: "Big",
+          lastName: "Bird",
+          role: "Renter"
         }
       ]);
     });
