@@ -67,7 +67,7 @@ router.put("/:id", (req, res) => {
 
 router.get("/manager/:id", (req, res) => {
   // Get all properties by manager id
-  const id = props.params.id;
+  const id = req.params.id;
   Properties.findManagersProperties(id)
     .then(properties => {
       if (properties) {
