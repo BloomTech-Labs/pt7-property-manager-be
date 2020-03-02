@@ -2,6 +2,7 @@
 const express = require("express");
 const User = require("./users-model");
 const router = express.Router();
+const bcrypt = require("bcryptjs");
 
 router.get("/", (req, res) => {
   // Get all users
@@ -50,11 +51,14 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.put("/manager/:id", (req, res) => {
-  // Finds manager by
+router.put("/:id", (req, res) => {
+  // Updates user by
   const id = req.params.id;
   const user = req.body;
-  User.updateManager(user, id)
+  const hash = bcrypt.hashSync(user.password, 10);
+  user.password = hash;
+
+  User.updateUser(user, id)
     .then(updated => {
       if (updated) {
         res.status(200).json({ updated });
@@ -66,25 +70,6 @@ router.put("/manager/:id", (req, res) => {
       res
         .status(500)
         .json({ err: err.message, message: "Error updating Manager" });
-    });
-});
-
-router.put("/renter/:id", (req, res) => {
-  // Finds renter by ID
-  const id = req.params.id;
-  const user = req.body;
-  User.updateRenter(user, id)
-    .then(updated => {
-      if (updated) {
-        res.status(200).json({ updated });
-      } else {
-        res.status(400).json({ message: "Please provide a valid id" });
-      }
-    })
-    .catch(err => {
-      res
-        .status(500)
-        .json({ err: err.message, message: "Error updating Renter" });
     });
 });
 

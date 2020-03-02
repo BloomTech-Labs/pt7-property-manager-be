@@ -8,8 +8,7 @@ module.exports = {
   removeUser, // Removes a user by id
   findUsersByRole, // Gets all users by role
   findUserById, // Gets user by id
-  updateManager, // Updates manager profile
-  updateRenter // Updates renter profile
+  updateUser // Updates user
 };
 
 // ALL USER
@@ -52,15 +51,8 @@ function findUserById(id) {
     .first();
 }
 
-// These are seperated for Auth reasons
-function updateManager(changes, id) {
-  // Updates manager profile
-  return db("users")
-    .where({ id })
-    .update(changes);
-}
-function updateRenter(changes, id) {
-  // Updates renter profile
+function updateUser(changes, id) {
+  // Updates user profile
   return db("users")
     .where({ id })
     .update(changes);
