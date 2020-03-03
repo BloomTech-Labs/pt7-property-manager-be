@@ -2,7 +2,6 @@
 const express = require("express");
 const Properties = require("./properties-model");
 const router = express.Router();
-
 // Authenticate
 const authenticate = require("../00-auth/restricted-middleware");
 

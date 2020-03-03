@@ -3,7 +3,6 @@ const express = require("express");
 const User = require("./users-model");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
-
 // Authenticate
 const authenticate = require("../00-auth/restricted-middleware");
 
