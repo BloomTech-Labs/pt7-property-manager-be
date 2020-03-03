@@ -16,9 +16,33 @@ router.post("/register", (req, res) => {
   if (validateResult.isSuccessful === true) {
     const hash = bcrypt.hashSync(user.password, 10);
     user.password = hash;
+    // const token = Token(user);
+    console.log(user);
 
-    User.addUser(req.body)
-      .then(user => res.status(200).json(user))
+    User.addUser(user)
+      .then(id => {
+        console.log(id);
+        User.findUserById(id.id)
+          .first()
+          .then(user => {
+            console.log(user);
+
+            const token = Token(user);
+
+            res
+              .status(200)
+              .json({
+                user,
+                subject: `Hello ${user.email}, here's a token`,
+                token
+              });
+          })
+          .catch(err =>
+            res
+              .status(500)
+              .json({ error: "Failed to register", err: err.message })
+          );
+      })
       .catch(err =>
         res.status(500).json({ error: "Failed to register user", err })
       );
