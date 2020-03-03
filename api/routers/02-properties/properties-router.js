@@ -1,6 +1,7 @@
 // Router setup and model import
 const express = require("express");
 const Properties = require("./properties-model");
+const User = require("../01-users/users-model");
 const router = express.Router();
 // Authenticate
 const authenticate = require("../00-auth/restricted-middleware");
@@ -75,10 +76,19 @@ router.get("/manager/:id", authenticate, (req, res) => {
   // Auth
   // Get all properties by manager id
   const id = req.params.id;
+  User.findUserById(id)
+    .then(user => {
+      return (manager = user);
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message, message: `Could not find manager ${id}` });
+    });
   Properties.findManagersProperties(id)
     .then(properties => {
       if (properties) {
-        res.status(200).json({ properties });
+        res.status(200).json({ manager, properties });
       } else {
         res
           .status(404)

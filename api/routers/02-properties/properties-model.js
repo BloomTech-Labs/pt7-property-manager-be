@@ -18,7 +18,7 @@ function add(property) {
 
 function find() {
   // Gets all properties
-  return db("property");
+  return db("property").join("users as u", "u.id", "property.manager_id");
 }
 
 function findById(id) {

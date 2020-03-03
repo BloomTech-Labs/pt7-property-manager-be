@@ -27,9 +27,7 @@ function findAllUsers() {
 
 function findBy(filter) {
   // Finds User by filter
-  return db("users")
-    .select("email", "password")
-    .where(filter);
+  return db("users").where(filter);
 }
 
 function removeUser(id) {
