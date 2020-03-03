@@ -3,7 +3,11 @@ const express = require("express");
 const Properties = require("./properties-model");
 const router = express.Router();
 
-router.get("/", (req, res) => {
+// Authenticate
+const authenticate = require("../00-auth/restricted-middleware");
+
+router.get("/", authenticate, (req, res) => {
+  // Auth
   // Get all properties
   Properties.find()
     .then(properties => {
@@ -16,7 +20,8 @@ router.get("/", (req, res) => {
     );
 });
 
-router.post("/", (req, res) => {
+router.post("/", authenticate, (req, res) => {
+  // Auth
   // Adds a property
   const property = req.body;
   Properties.add(property)
@@ -28,7 +33,8 @@ router.post("/", (req, res) => {
     });
 });
 
-router.get("/:id", (req, res) => {
+router.get("/:id", authenticate, (req, res) => {
+  // Auth
   // Get property by ID
   const { id } = req.params;
   Properties.findById(id)
@@ -46,7 +52,8 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.put("/:id", (req, res) => {
+router.put("/:id", authenticate, (req, res) => {
+  // Auth
   //  Edits property by ID
   const id = req.params.id;
   const property = req.body;
@@ -65,7 +72,8 @@ router.put("/:id", (req, res) => {
     });
 });
 
-router.get("/manager/:id", (req, res) => {
+router.get("/manager/:id", authenticate, (req, res) => {
+  // Auth
   // Get all properties by manager id
   const id = req.params.id;
   Properties.findManagersProperties(id)
@@ -85,7 +93,8 @@ router.get("/manager/:id", (req, res) => {
     );
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", authenticate, (req, res) => {
+  // Auth
   // Deletes property by ID
   const id = req.params.id;
   Properties.remove(id)

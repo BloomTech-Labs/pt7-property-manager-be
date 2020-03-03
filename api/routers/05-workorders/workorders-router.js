@@ -3,6 +3,7 @@ const WorkOrder = require("./workorders-model");
 const router = express.Router();
 
 router.get("/", (req, res) => {
+  // Auth
   WorkOrder.findAllWorkOrder()
     .then(orders => {
       res.status(200).json({ orders });
@@ -15,6 +16,7 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
+  // Auth
   const order = req.body;
   WorkOrder.addWorkOrder(order)
     .then(prop => {
@@ -26,6 +28,7 @@ router.post("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
+  // Auth
   const { id } = req.params;
   WorkOrder.findWorkOrderById(id)
     .then(order => {
@@ -43,6 +46,7 @@ router.get("/:id", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
+  // Auth
   const id = req.params.id;
   const order = req.body;
   WorkOrder.updateWorkOrder(order, id)
@@ -61,6 +65,7 @@ router.put("/:id", (req, res) => {
 });
 
 router.delete("/:id", (req, res) => {
+  // Auth
   const id = req.params.id;
   WorkOrder.removeWorkOrder(id)
     .then(nan =>

@@ -3,6 +3,7 @@ const lease_term = require("./leaseterms-model");
 const router = express.Router();
 
 router.post("/", (req, res) => {
+  // Auth
   const lease = req.body;
   lease_term
     .addLeaseTerm(lease)
@@ -15,6 +16,7 @@ router.post("/", (req, res) => {
 });
 
 router.get("/", (req, res) => {
+  // Auth
   // get all lease terms
   lease_term
     .findAllLeaseTerm()
@@ -29,6 +31,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
+  // Auth
   // get all lease terms
   const { id } = req.params;
   lease_term
@@ -48,6 +51,7 @@ router.get("/:id", (req, res) => {
 });
 
 router.put("/lease/:id", (req, res) => {
+  // Auth
   const id = req.params.id;
   const lease_term = req.body;
   lease_term
@@ -67,6 +71,7 @@ router.put("/lease/:id", (req, res) => {
 });
 
 router.delete("/:id", (req, res) => {
+  // Auth
   const id = req.params.id;
   lease_term
     .removeLeaseTerm(id)
