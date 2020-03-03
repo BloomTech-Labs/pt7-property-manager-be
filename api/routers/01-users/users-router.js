@@ -4,6 +4,9 @@ const User = require("./users-model");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 
+// Authenticate
+const authenticate = require("../00-auth/restricted-middleware");
+
 router.get("/", (req, res) => {
   // Get all users
   User.findAllUsers()
@@ -35,7 +38,7 @@ router.get("/:role", (req, res) => {
     );
 });
 
-router.get("/:id", (req, res) => {
+router.get("/:id", authenticate, (req, res) => {
   // Get user by ID
   const { id } = req.params;
   User.findUserById(id)
@@ -51,7 +54,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.put("/:id", (req, res) => {
+router.put("/:id", authenticate, (req, res) => {
   // Updates user by
   const id = req.params.id;
   const user = req.body;
@@ -73,7 +76,7 @@ router.put("/:id", (req, res) => {
     });
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", authenticate, (req, res) => {
   // Deletes User by ID
   const id = req.params.id;
   User.removeUser(id)

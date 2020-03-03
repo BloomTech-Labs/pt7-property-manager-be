@@ -3,7 +3,9 @@ const units = require("./units-model");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  units.findAllUnits()
+  // Auth
+  units
+    .findAllUnits()
     .then(units => {
       res.status(200).json({ units });
     })
@@ -15,8 +17,10 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
+  // Auth
   const unit = req.body;
-  units.addUnit(unit)
+  units
+    .addUnit(unit)
     .then(prop => {
       res.status(200).json({ prop });
     })
@@ -26,8 +30,10 @@ router.post("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
+  // Auth
   const { id } = req.params;
-  units.findUnitById(id)
+  units
+    .findUnitById(id)
     .then(unit => {
       if (unit) {
         res.status(200).json({ unit });
@@ -36,16 +42,16 @@ router.get("/:id", (req, res) => {
       }
     })
     .catch(err => {
-      res
-        .status(500)
-        .json({ error: "Failed to get unit", err: err.message });
+      res.status(500).json({ error: "Failed to get unit", err: err.message });
     });
 });
 
 router.put("/:id", (req, res) => {
+  // Auth
   const id = req.params.id;
   const unit = req.body;
-  units.updateUnit(unit, id)
+  units
+    .updateUnit(unit, id)
     .then(updated => {
       if (updated) {
         res.status(200).json({ updated });
@@ -61,15 +67,15 @@ router.put("/:id", (req, res) => {
 });
 
 router.delete("/:id", (req, res) => {
+  // Auth
   const id = req.params.id;
-  units.removeUnit(id)
+  units
+    .removeUnit(id)
     .then(nan =>
       res.status(204).json({ message: `Unit ${id} has been deleted` })
     )
     .catch(err =>
-      res
-        .status(500)
-        .json({ error: "Failed to delete unit", err: err.message })
+      res.status(500).json({ error: "Failed to delete unit", err: err.message })
     );
 });
 
