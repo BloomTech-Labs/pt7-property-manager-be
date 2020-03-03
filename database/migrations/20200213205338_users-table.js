@@ -10,6 +10,7 @@ exports.up = async function(knex) {
     tbl.string("firstName", 128).notNullable();
     tbl.string("lastName", 128).notNullable();
     tbl.string("role", 128).notNullable();
+    tbl.string("img", 255);
   });
 };
 
