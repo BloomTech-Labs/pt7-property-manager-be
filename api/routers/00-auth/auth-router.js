@@ -29,13 +29,11 @@ router.post("/register", (req, res) => {
 
             const token = Token(user);
 
-            res
-              .status(200)
-              .json({
-                user,
-                subject: `Hello ${user.email}, here's a token`,
-                token
-              });
+            res.status(200).json({
+              user,
+              subject: `Hello ${user.email}, here's a token`,
+              token
+            });
           })
           .catch(err =>
             res
@@ -68,6 +66,7 @@ router.post("/login", (req, res) => {
         const token = Token(user);
 
         res.status(200).json({
+          user,
           subject: `Hello ${user.email}, here's a token`,
           token
         });
