@@ -18,7 +18,9 @@ function add(property) {
 
 function find() {
   // Gets all properties
-  return db("property").join("users as u", "u.id", "property.manager_id");
+  return db("property as p")
+    .join("users as u", "p.manager_id", "=", "u.id")
+    .select("p.id", "p.name", "p.img", "u.firstName", "u.lastName");
 }
 
 function findById(id) {
