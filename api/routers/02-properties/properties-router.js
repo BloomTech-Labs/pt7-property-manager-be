@@ -84,7 +84,12 @@ router.get("/manager/:id", authenticate, (req, res) => {
   const id = req.params.id;
   User.findUserById(id)
     .then(user => {
-      return (manager = user);
+      if( user.role.toLowerCase() != "manager") {
+        res.status(400).json({ message: `Please supply a manager id` });
+      }
+      else {
+        return (manager = user);
+      }
     })
     .catch(err => {
       res

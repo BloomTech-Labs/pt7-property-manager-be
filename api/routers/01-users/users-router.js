@@ -19,29 +19,12 @@ router.get("/", (req, res) => {
     );
 });
 
-router.get("/:role", (req, res) => {
-  // Get all users by role
-  const role = req.params.role;
-  User.findUsersByRole(role)
-    .then(users => {
-      if (role === "Manager") {
-        res.status(200).json({ Managers: users });
-      } else {
-        res.status(200).json({ Renters: users });
-      }
-    })
-    .catch(err =>
-      res
-        .status(500)
-        .json({ error: "Failed to get all users", err: err.message })
-    );
-});
-
 router.get("/:id", authenticate, (req, res) => {
   // Get user by ID
   const { id } = req.params;
   User.findUserById(id)
     .then(user => {
+      console.log(user)
       if (user) {
         res.status(200).json({ user });
       } else {

@@ -14,7 +14,7 @@ middleware(server);
 // Simple GET request
 server.get("/", (req, res) => {
   console.log("It's alive!");
-  res.status(200).json({ message: "It's alive!" });
+  res.status(200).json({ message: "It's alive!", documentation: "https://documenter.getpostman.com/view/9266056/SzKZquwm?version=latest" });
 });
 
 // Router Setup
