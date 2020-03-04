@@ -25,8 +25,14 @@ router.post("/", authenticate, (req, res) => {
   // Adds a property
   const property = req.body;
   Properties.add(property)
-    .then(prop => {
-      res.status(200).json({ prop });
+    .then(id => {
+      Properties.findById(id.id)
+        .then(prop => {
+      res.status(200).json({prop});
+        })
+        .catch(err => {
+          res.status(500).json({ err: err.message });
+        });
     })
     .catch(err => {
       res.status(500).json({ err: err.message });
