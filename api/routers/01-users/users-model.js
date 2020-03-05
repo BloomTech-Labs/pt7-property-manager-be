@@ -6,7 +6,6 @@ module.exports = {
   findAllUsers, // Gets all Users
   findBy, // Finds User by filter
   removeUser, // Removes a user by id
-  findUsersByRole, // Gets all users by role
   findUserById, // Gets user by id
   updateUser // Updates user
 };
@@ -35,11 +34,6 @@ function removeUser(id) {
   return db("users")
     .where({ id })
     .delete();
-}
-
-function findUsersByRole(role) {
-  // Gets all users by role
-  return db("users").where({ role });
 }
 
 function findUserById(id) {
