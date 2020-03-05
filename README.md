@@ -87,27 +87,29 @@ To get the server running locally:
 
 `findBy(filer)` -> Returns all users by filter (email, name, etc.)
 
-`removeUser(id)` -> Removes a user by ID
+`removeUser(id)` -> Removes a user by id
 
-`findUserById(id)` -> Gets user by id
+`findUserByid(id)` -> Gets user by id
+
+`findManagerByid(id)` -> Gets Manager by id
 
 `updateUser(changes, id)` -> Updates user profile
 <br>
 <br>
 <br>
-`findUserById(id)` -> Gets user by id
+`findUserByid(id)` -> Gets user by id
 
 `add(property)` -> Adds property
 
 `find()` -> Gets all properties
 
-`findById(id)` -> Gets property by ID
+`findByid(id)` -> Gets property by id
 
 `update(changes, id)` -> Updates property
 
-`remove(id)` -> Deletes property by ID
+`remove(id)` -> Deletes property by id
 
-`findManagersProperties(id)` -> Gets all properties by manager ID
+`findManagersProperties(id)` -> Gets all properties by manager id
 
 ## 3️⃣ Environment Variables
 

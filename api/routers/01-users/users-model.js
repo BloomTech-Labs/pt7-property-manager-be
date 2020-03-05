@@ -7,6 +7,7 @@ module.exports = {
   findBy, // Finds User by filter
   removeUser, // Removes a user by id
   findUserById, // Gets user by id
+  findManagerById, // Gets Manager By ID
   updateUser // Updates user
 };
 
@@ -39,6 +40,22 @@ function removeUser(id) {
 function findUserById(id) {
   // Gets user by id
   return db("users")
+    .where({ id })
+    .first();
+}
+
+function findManagerById(id) {
+  // Gets Manager by id
+  return db("users")
+    .select(
+      "id",
+      "email",
+      "phoneNumber",
+      "firstName",
+      "lastName",
+      "role",
+      "img"
+    )
     .where({ id })
     .first();
 }

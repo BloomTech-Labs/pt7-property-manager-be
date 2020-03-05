@@ -39,7 +39,7 @@ router.get("/:id", authenticate, (req, res) => {
 router.get("/manager/:id", (req, res) => {
   // Get manager by ID
   const { id } = req.params;
-  User.findUserById(id)
+  User.findManagerById(id)
     .then(manager => {
       console.log(manager);
       if (manager && manager.role.toLowerCase() === "manager") {
