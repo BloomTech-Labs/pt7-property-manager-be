@@ -32,12 +32,13 @@ To get the server running locally:
 
 #### User Routes
 
-| Method | Endpoint         | Access Control  | Description                          |
-| ------ | ---------------- | --------------- | ------------------------------------ |
-| GET    | `/users`         | all users       | Returns info for the logged in user. |
-| GET    | `/users/:id`     | individual user | Returns user by ID.                  |
-| PUT    | `/users/:userId` | individual user | Edit users profile information.      |
-| DELETE | `/users/:userId` | individual user | Delete your user profile.            |
+| Method | Endpoint             | Access Control  | Description                          |
+| ------ | -------------------- | --------------- | ------------------------------------ |
+| GET    | `/users`             | all users       | Returns info for the logged in user. |
+| GET    | `/users/:id`         | individual user | Returns user by ID.                  |
+| GET    | `/users/manager/:id` | all users       | Returns manager by ID.               |
+| PUT    | `/users/:userId`     | individual user | Edit users profile information.      |
+| DELETE | `/users/:userId`     | individual user | Delete your user profile.            |
 
 #### Properties Routes
 
