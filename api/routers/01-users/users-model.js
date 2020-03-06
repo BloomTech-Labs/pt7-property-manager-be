@@ -14,6 +14,7 @@ module.exports = {
 // ALL USER
 
 function addUser(user) {
+  // tested
   // Adds a user
   return db("users")
     .insert(user, "id")
