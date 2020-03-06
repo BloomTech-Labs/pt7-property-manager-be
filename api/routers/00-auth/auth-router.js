@@ -8,7 +8,7 @@ const Token = require("./token/user-token");
 
 const { validateUser } = require("./validate-user.js");
 
-// Register
+// Register   // Tested
 router.post("/register", (req, res) => {
   let user = req.body;
   const validateResult = validateUser(user);
