@@ -5,7 +5,7 @@ function generateUserToken(user) {
   const payload = {
     subject: user.id,
     email: user.email,
-    type: "user"
+    type: user.role
   };
 
   const secret = process.env.JWT_SECRET || "This is secret this is hidden";
