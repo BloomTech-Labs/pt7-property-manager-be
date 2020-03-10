@@ -65,5 +65,6 @@ function updateUser(changes, id) {
   // Updates user profile
   return db("users")
     .where({ id })
-    .update(changes);
+    .update(changes)
+    .returning("id");
 }
