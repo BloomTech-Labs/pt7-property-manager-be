@@ -6,7 +6,7 @@ const router = express.Router();
 // Authenticate
 const authenticate = require("../00-auth/restricted-middleware");
 
-router.get("/", authenticate, (req, res) => {
+router.get("/", (req, res) => {
   // Auth
   // Get all properties
   Properties.find()
