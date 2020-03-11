@@ -19,7 +19,7 @@ router.get("/", (req, res) => {
     );
 });
 
-router.get("/:id", authenticate, (req, res) => {
+router.get("/:id", (req, res) => {
   // Get user by ID
   const { id } = req.params;
   User.findUserById(id)
