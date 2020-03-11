@@ -6,14 +6,15 @@ module.exports = {
   findAllUsers, // Gets all Users
   findBy, // Finds User by filter
   removeUser, // Removes a user by id
-  findUsersByRole, // Gets all users by role
   findUserById, // Gets user by id
+  findManagerById, // Gets Manager By ID
   updateUser // Updates user
 };
 
 // ALL USER
 
 function addUser(user) {
+  // tested
   // Adds a user
   return db("users")
     .insert(user, "id")
@@ -37,14 +38,25 @@ function removeUser(id) {
     .delete();
 }
 
-function findUsersByRole(role) {
-  // Gets all users by role
-  return db("users").where({ role });
-}
-
 function findUserById(id) {
   // Gets user by id
   return db("users")
+    .where({ id })
+    .first();
+}
+
+function findManagerById(id) {
+  // Gets Manager by id
+  return db("users")
+    .select(
+      "id",
+      "email",
+      "phoneNumber",
+      "firstName",
+      "lastName",
+      "role",
+      "img"
+    )
     .where({ id })
     .first();
 }
@@ -53,5 +65,6 @@ function updateUser(changes, id) {
   // Updates user profile
   return db("users")
     .where({ id })
-    .update(changes);
+    .update(changes)
+    .returning("id");
 }

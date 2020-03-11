@@ -24,7 +24,7 @@ router.get("/:id", authenticate, (req, res) => {
   const { id } = req.params;
   User.findUserById(id)
     .then(user => {
-      console.log(user)
+      console.log(user);
       if (user) {
         res.status(200).json({ user });
       } else {
@@ -36,26 +36,64 @@ router.get("/:id", authenticate, (req, res) => {
     });
 });
 
-router.put("/:id", authenticate, (req, res) => {
-  // Updates user by
-  const id = req.params.id;
-  const user = req.body;
-  const hash = bcrypt.hashSync(user.password, 10);
-  user.password = hash;
-
-  User.updateUser(user, id)
-    .then(updated => {
-      if (updated) {
-        res.status(200).json({ updated });
+router.get("/manager/:id", (req, res) => {
+  // Get manager by ID
+  const { id } = req.params;
+  User.findManagerById(id)
+    .then(manager => {
+      console.log(manager);
+      if (manager && manager.role.toLowerCase() === "manager") {
+        res.status(200).json({ manager });
       } else {
-        res.status(400).json({ message: "Please provide a valid id" });
+        res.status(400).json({ message: "Please supply a valid Manager ID" });
       }
     })
     .catch(err => {
       res
         .status(500)
-        .json({ err: err.message, message: "Error updating Manager" });
+        .json({ error: "Failed to get manager", err: err.message });
     });
+});
+
+router.put("/:id", authenticate, (req, res) => {
+  // Updates user by
+  const id = req.params.id;
+  const user = req.body;
+
+  // If password, hash it
+  if (user.password) {
+    const hash = bcrypt.hashSync(user.password, 10);
+    user.password = hash;
+
+    User.updateUser(user, id)
+      .then(updated => {
+        if (updated) {
+          res.status(200).json({ updated });
+        } else {
+          res.status(400).json({ message: "Please provide a valid id" });
+        }
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ err: err.message, message: "Error updating Manager" });
+      });
+    // If no password, continue to update
+  } else {
+    User.updateUser(user, id)
+      .then(updated => {
+        if (updated) {
+          res.status(200).json({ updated });
+        } else {
+          res.status(400).json({ message: "Please provide a valid id" });
+        }
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ err: err.message, message: "Error updating Manager" });
+      });
+  }
 });
 
 router.delete("/:id", authenticate, (req, res) => {
