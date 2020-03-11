@@ -11,7 +11,7 @@ module.exports = (req, res, next) => {
   User.findUserById(id)
     .then(user => {
       if (token) {
-        const secret = process.env.JWT_SECRET || "This is secret this is hidden";
+        const secret = process.env.JWT_SECRET;
 
         jwt.verify(token, secret, (err, decodedToken) => {
           if (err) {
