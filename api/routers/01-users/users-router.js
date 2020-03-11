@@ -19,7 +19,30 @@ router.get("/", (req, res) => {
     );
 });
 
-router.get("/:id", authenticate, (req, res) => {
+router.get("/manager/", (req, res) => {
+  User.findAllManagers()
+    .then(managers => {
+      res.status(200).json({ managers });
+    })
+    .catch(err =>
+      res
+        .status(500)
+        .json({ error: "Failed to get all managers", err: err.message })
+    );
+});
+
+router.get("/renter/", (req, res) => {
+  User.findAllRenters()
+    .then(renters => {
+      res.status(200).json({ renters });
+    })
+    .catch(err =>
+      res
+        .status(500)
+        .json({ error: "Failed to get all renters", err: err.message })
+    );
+});
+router.get("/:id", (req, res) => {
   // Get user by ID
   const { id } = req.params;
   User.findUserById(id)
@@ -33,25 +56,6 @@ router.get("/:id", authenticate, (req, res) => {
     })
     .catch(err => {
       res.status(500).json({ error: "Failed to get user", err: err.message });
-    });
-});
-
-router.get("/manager/:id", (req, res) => {
-  // Get manager by ID
-  const { id } = req.params;
-  User.findManagerById(id)
-    .then(manager => {
-      console.log(manager);
-      if (manager && manager.role.toLowerCase() === "manager") {
-        res.status(200).json({ manager });
-      } else {
-        res.status(400).json({ message: "Please supply a valid Manager ID" });
-      }
-    })
-    .catch(err => {
-      res
-        .status(500)
-        .json({ error: "Failed to get manager", err: err.message });
     });
 });
 
