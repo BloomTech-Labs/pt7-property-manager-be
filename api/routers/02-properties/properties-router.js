@@ -6,7 +6,8 @@ const router = express.Router();
 // Authenticate
 const authenticate = require("../00-auth/restricted-middleware");
 
-router.get("/", authenticate, (req, res) => {
+// Removed authenticate
+router.get("/", (req, res) => {
   // Auth
   // Get all properties
   Properties.find()
@@ -28,7 +29,7 @@ router.post("/", authenticate, (req, res) => {
     .then(id => {
       Properties.findById(id.id)
         .then(prop => {
-      res.status(200).json({prop});
+          res.status(200).json({ prop });
         })
         .catch(err => {
           res.status(500).json({ err: err.message });
@@ -39,7 +40,7 @@ router.post("/", authenticate, (req, res) => {
     });
 });
 
-router.get("/:id", authenticate, (req, res) => {
+router.get("/:id", (req, res) => {
   // Auth
   // Get property by ID
   const { id } = req.params;
@@ -84,10 +85,9 @@ router.get("/manager/:id", authenticate, (req, res) => {
   const id = req.params.id;
   User.findUserById(id)
     .then(user => {
-      if( user.role.toLowerCase() != "manager") {
+      if (user.role.toLowerCase() != "manager") {
         res.status(400).json({ message: `Please supply a manager id` });
-      }
-      else {
+      } else {
         return (manager = user);
       }
     })
