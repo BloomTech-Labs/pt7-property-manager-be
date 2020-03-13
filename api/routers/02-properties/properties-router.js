@@ -5,6 +5,7 @@ const User = require("../01-users/users-model");
 const router = express.Router();
 // Authenticate
 const authenticate = require("../00-auth/restricted-middleware");
+const roleCheck = require("../00-auth/role-check");
 
 // Removed authenticate
 router.get("/", (req, res) => {
@@ -21,7 +22,7 @@ router.get("/", (req, res) => {
     );
 });
 
-router.post("/", authenticate, (req, res) => {
+router.post("/", authenticate, roleCheck, (req, res) => {
   // Auth
   // Adds a property
   const property = req.body;
@@ -59,7 +60,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.put("/:id", authenticate, (req, res) => {
+router.put("/:id", authenticate, roleCheck, (req, res) => {
   // Auth
   //  Edits property by ID
   const id = req.params.id;
@@ -93,20 +94,16 @@ router.get("/manager/:id", (req, res) => {
             if (properties) {
               res.status(200).json({ user, properties });
             } else {
-              res
-                .status(404)
-                .json({
-                  message: `Manager ${id} does not have any properties`
-                });
+              res.status(404).json({
+                message: `Manager ${id} does not have any properties`
+              });
             }
           })
           .catch(err =>
-            res
-              .status(500)
-              .json({
-                error: "Failed to get managers properties",
-                err: err.message
-              })
+            res.status(500).json({
+              error: "Failed to get managers properties",
+              err: err.message
+            })
           );
       }
     })
@@ -117,7 +114,7 @@ router.get("/manager/:id", (req, res) => {
     });
 });
 
-router.delete("/:id", authenticate, (req, res) => {
+router.delete("/:id", authenticate, roleCheck, (req, res) => {
   // Auth
   // Deletes property by ID
   const id = req.params.id;
