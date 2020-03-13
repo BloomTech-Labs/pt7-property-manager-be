@@ -5,6 +5,7 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 // Authenticate
 const authenticate = require("../00-auth/restricted-middleware");
+const idCheck = require("../00-auth/id-check");
 
 router.get("/", (req, res) => {
   // Get all users
@@ -55,7 +56,7 @@ router.get("/manager/:id", (req, res) => {
     });
 });
 
-router.put("/:id", authenticate, (req, res) => {
+router.put("/:id", authenticate, idCheck, (req, res) => {
   // Updates user by
   const id = req.params.id;
   const user = req.body;
@@ -96,7 +97,7 @@ router.put("/:id", authenticate, (req, res) => {
   }
 });
 
-router.delete("/:id", authenticate, (req, res) => {
+router.delete("/:id", authenticate, idCheck, (req, res) => {
   // Deletes User by ID
   const id = req.params.id;
   User.removeUser(id)
