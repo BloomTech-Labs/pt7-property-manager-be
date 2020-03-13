@@ -88,7 +88,26 @@ router.get("/manager/:id", (req, res) => {
       if (user.role.toLowerCase() != "manager") {
         res.status(400).json({ message: `Please supply a manager id` });
       } else {
-        return (manager = user);
+        Properties.findManagersProperties(id)
+          .then(properties => {
+            if (properties) {
+              res.status(200).json({ user, properties });
+            } else {
+              res
+                .status(404)
+                .json({
+                  message: `Manager ${id} does not have any properties`
+                });
+            }
+          })
+          .catch(err =>
+            res
+              .status(500)
+              .json({
+                error: "Failed to get managers properties",
+                err: err.message
+              })
+          );
       }
     })
     .catch(err => {
@@ -96,21 +115,6 @@ router.get("/manager/:id", (req, res) => {
         .status(500)
         .json({ error: err.message, message: `Could not find manager ${id}` });
     });
-  Properties.findManagersProperties(id)
-    .then(properties => {
-      if (properties) {
-        res.status(200).json({ manager, properties });
-      } else {
-        res
-          .status(404)
-          .json({ message: `Manager ${id} does not have any properties` });
-      }
-    })
-    .catch(err =>
-      res
-        .status(500)
-        .json({ error: "Failed to get managers properties", err: err.message })
-    );
 });
 
 router.delete("/:id", authenticate, (req, res) => {
