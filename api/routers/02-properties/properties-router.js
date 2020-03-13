@@ -7,7 +7,6 @@ const router = express.Router();
 const authenticate = require("../00-auth/restricted-middleware");
 const roleCheck = require("../00-auth/role-check");
 
-// Removed authenticate
 router.get("/", (req, res) => {
   // Auth
   // Get all properties

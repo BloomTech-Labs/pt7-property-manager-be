@@ -1,6 +1,6 @@
 module.exports = function idCheck(req, res, next) {
-  const { id } = req.decodedJwt;
-  if (id == req.params.id) {
+  const { subject } = req.decodedJwt;
+  if (subject == req.params.id) {
     next();
   } else {
     res.status(500).json({

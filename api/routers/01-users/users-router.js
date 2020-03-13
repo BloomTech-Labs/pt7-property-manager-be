@@ -101,7 +101,7 @@ router.delete("/:id", authenticate, idCheck, (req, res) => {
   // Deletes User by ID
   const id = req.params.id;
   User.removeUser(id)
-    .then(nan =>
+    .then(user =>
       res.status(204).json({ message: `User ${id} has been deleted` })
     )
     .catch(err =>
