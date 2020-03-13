@@ -79,7 +79,7 @@ router.put("/:id", authenticate, (req, res) => {
     });
 });
 
-router.get("/manager/:id", authenticate, (req, res) => {
+router.get("/manager/:id", (req, res) => {
   // Auth
   // Get all properties by manager id
   const id = req.params.id;
