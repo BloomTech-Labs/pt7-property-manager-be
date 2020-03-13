@@ -32,24 +32,24 @@ To get the server running locally:
 
 #### User Routes
 
-| Method | Endpoint             | Access Control  | Description                          |
-| ------ | -------------------- | --------------- | ------------------------------------ |
-| GET    | `/users`             | All users   | Returns logged in user info.    |
-| GET    | `/users/:id`         | A user      | Returns user by ID.             |
-| GET    | `/users/manager/:id` | A manager   | Returns manager by ID.          |
-| PUT    | `/users/:userId`     | A user      | Edit users profile information. |
-| DELETE | `/users/:userId`     | A user      | Delete your user profile.       |
+| Method | Endpoint             | Access Control  | Description                     |
+| ------ | -------------------- | --------------- | ------------------------------- |
+| GET    | `/users`             | All users       | Returns logged in user info.    |
+| GET    | `/users/:id`         | All users       | Returns user by ID.             |
+| GET    | `/users/manager/:id` | All users       | Returns manager by ID.          |
+| PUT    | `/users/:id`         | Loggged in user | Edit users profile information. |
+| DELETE | `/users/:id`         | Loggged in user | Delete your user profile.       |
 
 #### Properties Routes
 
-| Method | Endpoint          | Access Control | Description                    |
-| ------ | ----------------- | -------------- | ----------------------------   |
-| GET    | `/properties`     | All users      | Returns all properties.        |
-| GET    | `/properties/:id` | All users      | Returns property by ID         |
-| GET    | `/manager/:id`    | Manager        | Returns property by manager ID |
-| POST   | `/properties`     | Manager        | Creates a property.            |
-| PUT    | `/properties/:id` | Manager        | Modify an existing property.   |
-| DELETE | `/properties/:id` | Manager        | Delete a property.             |
+| Method | Endpoint                 | Access Control    | Description                    |
+| ------ | ------------------------ | ----------------- | ------------------------------ |
+| GET    | `/properties`            | All users         | Returns all properties.        |
+| POST   | `/properties`            | Logged in Manager | Creates a property.            |
+| GET    | `/properties/:id`        | All users         | Returns property by ID         |
+| PUT    | `/properties/:id`        | Logged in Manager | Modify an existing property.   |
+| GET    | `properties/manager/:id` | All users         | Returns property by manager ID |
+| DELETE | `/properties/:id`        | Logged in Manager | Delete a property.             |
 
 # Data Model
 
