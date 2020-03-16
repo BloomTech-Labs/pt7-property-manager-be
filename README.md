@@ -30,6 +30,13 @@ To get the server running locally:
 
 ## 2️⃣ Endpoints
 
+#### Auth Routes
+
+| Method | Endpoint         | Access Control | Description                       |
+| ------ | ---------------- | -------------- | --------------------------------- |
+| POST   | `/auth/register` | All users      | Registers a user, returns a token |
+| POST   | `/auth/login`    | All users      | Logs in a user, returns a token   |
+
 #### User Routes
 
 | Method | Endpoint             | Access Control  | Description                     |
