@@ -15,13 +15,17 @@ exports.up = async function(knex) {
       .unsigned()
       .notNullable()
       .references("id")
-      .inTable("leaseterms");
+      .inTable("leaseterms")
+      .onUpdate("CASCADE")
+      .onDelete("CASCADE");
     tbl
       .integer("property_id")
       .unsigned()
       .notNullable()
       .references("id")
-      .inTable("property");
+      .inTable("property")
+      .onUpdate("CASCADE")
+      .onDelete("CASCADE");
   });
 };
 
