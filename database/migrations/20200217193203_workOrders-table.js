@@ -14,7 +14,9 @@ exports.up = async function(knex) {
       .unsigned()
       .notNullable()
       .references("id")
-      .inTable("units");
+      .inTable("units")
+      .onUpdate("CASCADE")
+      .onDelete("CASCADE");
   });
 };
 
