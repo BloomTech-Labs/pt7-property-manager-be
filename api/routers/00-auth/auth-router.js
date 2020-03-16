@@ -8,7 +8,7 @@ const Token = require("./token/user-token");
 
 const { validateUser } = require("./validate-user.js");
 
-// Register   // Tested
+// Register
 router.post("/register", (req, res) => {
   let user = req.body;
   const validateResult = validateUser(user);
@@ -16,7 +16,6 @@ router.post("/register", (req, res) => {
   if (validateResult.isSuccessful === true) {
     const hash = bcrypt.hashSync(user.password, 10);
     user.password = hash;
-    // const token = Token(user);
     console.log(user);
 
     User.addUser(user)
