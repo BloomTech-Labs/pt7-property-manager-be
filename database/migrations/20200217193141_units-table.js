@@ -1,7 +1,7 @@
 exports.up = async function(knex) {
   await knex.schema.createTable("units", tbl => {
     tbl.increments();
-    tbl.integer("number").notNullable();
+    tbl.string("number").notNullable();
     tbl
       .integer("renter_id")
       .unsigned()
@@ -26,6 +26,20 @@ exports.up = async function(knex) {
       .inTable("property")
       .onUpdate("CASCADE")
       .onDelete("CASCADE");
+    tbl.string("description", 255);
+    tbl.date("date_available").notNullable();
+    tbl.string("parking", 128);
+    tbl.string("type", 128).notNullable();
+    tbl.string("cooling", 128);
+    tbl.string("heating", 128);
+    tbl.string("pets", 128);
+    tbl.string("laundry", 128);
+    tbl.string("fees", 128).notNullable();
+    tbl.integer("sqft").notNullable();
+    tbl.string("elementary", 128);
+    tbl.string("middle", 128);
+    tbl.string("high", 128);
+    tbl.string("district", 128);
   });
 };
 
