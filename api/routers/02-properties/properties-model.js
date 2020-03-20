@@ -20,7 +20,18 @@ function find() {
   // Gets all properties
   return db("property as p")
     .join("users as u", "p.manager_id", "=", "u.id")
-    .select("p.id", "p.name", "p.img", "p.manager_id", "u.firstName", "u.lastName");
+    .select(
+      "p.id",
+      "p.address",
+      "p.city",
+      "p.state",
+      "p.zip",
+      "p.country",
+      "p.img",
+      "p.manager_id",
+      "u.firstName",
+      "u.lastName"
+    );
 }
 
 function findById(id) {
