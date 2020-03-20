@@ -18,7 +18,9 @@ function findAllUnits() {
   return db("units")
     .join("users as u", "units.renter_id", "=", "u.id")
     .join("leaseterms as l", "units.lease_id", "=", "l.id")
-    .join("property as p", "units.property_id", "=", "p.id");
+    .join("property as p", "units.property_id", "=", "p.id")
+    .select("units.id", "number", "property_id", "description", "date_available", "parking", "type", "cooling", "heating", "pets", "laundry", "fees", "sqft", "elementary",
+    "middle", "high", "district", "p.img", "address", "city", "state", "zip", "country", "manager_id");
 }
 
 function findUnitById(id) {
