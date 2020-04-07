@@ -60,7 +60,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.put("/:id", authenticate, roleCheck, (req, res) => {
+router.put("/:id", authenticate, roleCheck, deleteMiddleware, (req, res) => {
   // Auth
   //  Edits property by ID
   const id = req.params.id;
