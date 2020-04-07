@@ -49,14 +49,14 @@ To get the server running locally:
 
 #### Properties Routes
 
-| Method | Endpoint                  | Access Control    | Description                    |
-| ------ | ------------------------- | ----------------- | ------------------------------ |
-| GET    | `/properties`             | All users         | Returns all properties.        |
-| POST   | `/properties`             | Logged in Manager | Creates a property.            |
-| GET    | `/properties/:id`         | All users         | Returns property by ID         |
-| PUT    | `/properties/:id`         | Logged in Manager | Modify an existing property.   |
-| GET    | `/properties/manager/:id` | All users         | Returns property by manager ID |
-| DELETE | `/properties/:id`         | Logged in Manager | Delete a property.             |
+| Method | Endpoint                  | Access Control                          | Description                    |
+| ------ | ------------------------- | --------------------------------------- | ------------------------------ |
+| GET    | `/properties`             | All users                               | Returns all properties.        |
+| POST   | `/properties`             | Logged in Manager                       | Creates a property.            |
+| GET    | `/properties/:id`         | All users                               | Returns property by ID         |
+| PUT    | `/properties/:id`         | Logged in Manager                       | Modify an existing property.   |
+| GET    | `/properties/manager/:id` | All users                               | Returns property by manager ID |
+| DELETE | `/properties/:id`         | Manager can delete their own properties | Delete a property.             |
 
 #### Units Routes
 
