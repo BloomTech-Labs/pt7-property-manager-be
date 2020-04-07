@@ -2,8 +2,11 @@ const express = require("express");
 const units = require("./units-model");
 const router = express.Router();
 
+const authenticate = require("../00-auth/restricted-middleware");
+const roleCheck = require("../00-auth/role-check");
+const deleteMiddleware = require("../00-auth/delete-middleware");
+
 router.get("/", (req, res) => {
-  // Auth
   units
     .findAllUnits()
     .then(units => {
@@ -16,8 +19,7 @@ router.get("/", (req, res) => {
     );
 });
 
-router.post("/", (req, res) => {
-  // Auth
+router.post("/", authenticate, roleCheck, (req, res) => {
   const unit = req.body;
   units
     .addUnit(unit)
@@ -46,8 +48,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.put("/:id", (req, res) => {
-  // Auth
+router.put("/:id", authenticate, roleCheck, deleteMiddleware, (req, res) => {
   const id = req.params.id;
   const unit = req.body;
   units
@@ -66,8 +67,7 @@ router.put("/:id", (req, res) => {
     });
 });
 
-router.delete("/:id", (req, res) => {
-  // Auth
+router.delete("/:id", authenticate, roleCheck, deleteMiddleware, (req, res) => {
   const id = req.params.id;
   units
     .removeUnit(id)
