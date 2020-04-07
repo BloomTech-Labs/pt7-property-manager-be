@@ -65,14 +65,24 @@ To get the server running locally:
 
 #### Properties Routes
 
-| Method | Endpoint                 | Access Control    | Description                    |
-| ------ | ------------------------ | ----------------- | ------------------------------ |
-| GET    | `/properties`            | All users         | Returns all properties.        |
-| POST   | `/properties`            | Logged in Manager | Creates a property.            |
-| GET    | `/properties/:id`        | All users         | Returns property by ID         |
-| PUT    | `/properties/:id`        | Logged in Manager | Modify an existing property.   |
-| GET    | `properties/manager/:id` | All users         | Returns property by manager ID |
-| DELETE | `/properties/:id`        | Logged in Manager | Delete a property.             |
+| Method | Endpoint                  | Access Control    | Description                    |
+| ------ | ------------------------- | ----------------- | ------------------------------ |
+| GET    | `/properties`             | All users         | Returns all properties.        |
+| POST   | `/properties`             | Logged in Manager | Creates a property.            |
+| GET    | `/properties/:id`         | All users         | Returns property by ID         |
+| PUT    | `/properties/:id`         | Logged in Manager | Modify an existing property.   |
+| GET    | `/properties/manager/:id` | All users         | Returns property by manager ID |
+| DELETE | `/properties/:id`         | Logged in Manager | Delete a property.             |
+
+#### Units Routes
+
+| Method | Endpoint     | Access Control    | Description                  |
+| ------ | ------------ | ----------------- | ---------------------------- |
+| GET    | `/units`     | All users         | Returns all units.           |
+| POST   | `/units`     | Logged in Manager | Creates a property.          |
+| GET    | `/units/:id` | All users         | Returns property by ID       |
+| PUT    | `/units/:id` | Logged in Manager | Modify an existing property. |
+| DELETE | `/units/:id` | Logged in Manager | Delete a property.           |
 
 # Data Model
 
