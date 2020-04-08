@@ -1,9 +1,9 @@
 const request = require("supertest");
-const usersRouter = require("./users-router");
+const unitsRouter = require("./units-router");
 
-describe("Get all users /", () => {
+describe("Get all units /", () => {
   it("should return 200", () => {
-    request(usersRouter)
+    request(unitsRouter)
       .get("/")
       .then(res => {
         expect(res.status).toBe(200);
@@ -11,9 +11,9 @@ describe("Get all users /", () => {
   });
 });
 
-describe("Get user by ID", () => {
+describe("Get units by ID", () => {
   it("should return 200", () => {
-    request(usersRouter)
+    request(unitsRouter)
       .get("/:id")
       .then(res => {
         expect(res.status).toBe(200);
@@ -21,19 +21,9 @@ describe("Get user by ID", () => {
   });
 });
 
-describe("Get manager by ID", () => {
+describe("Updates units by ID", () => {
   it("should return 200", () => {
-    request(usersRouter)
-      .get("/manager/:id")
-      .then(res => {
-        expect(res.status).toBe(200);
-      });
-  });
-});
-
-describe("Updates user by ID", () => {
-  it("should return 200", () => {
-    request(usersRouter)
+    request(unitsRouter)
       .put("/:id")
       .then(res => {
         expect(res.status).toBe(200);
@@ -41,9 +31,9 @@ describe("Updates user by ID", () => {
   });
 });
 
-describe(" Deletes User by ID", () => {
+describe(" Deletes units by ID", () => {
   it("should return 200", () => {
-    request(usersRouter)
+    request(unitsRouter)
       .delete("/:id")
       .then(res => {
         expect(res.status).toBe(200);
