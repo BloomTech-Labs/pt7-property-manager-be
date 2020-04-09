@@ -17,7 +17,7 @@ server.get("/", (req, res) => {
   console.log("It's alive!");
   res.status(200).json({
     message: "It's alive!",
-    documentation: "https://documenter.getpostman.com/view/9339560/SzS2xoju"
+    documentation: "https://documenter.getpostman.com/view/9339560/SzS2xoju",
   });
 });
 
