@@ -6,6 +6,7 @@ module.exports = {
   findUnitById,
   updateUnit,
   removeUnit,
+  getPropertiesUnits,
 };
 
 function addUnit(unit) {
@@ -96,4 +97,8 @@ function updateUnit(changes, id) {
 
 function removeUnit(id) {
   return db("units").where({ id }).delete();
+}
+
+function getPropertiesUnits(id) {
+  return db("units").where({ property_id: id });
 }
