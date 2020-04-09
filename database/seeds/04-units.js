@@ -1,8 +1,8 @@
-exports.seed = function(knex) {
+exports.seed = function (knex) {
   // Deletes ALL existing entries
   return knex("units")
     .del()
-    .then(function() {
+    .then(function () {
       // Inserts seed entries
       return knex("units").insert([
         {
@@ -19,12 +19,12 @@ exports.seed = function(knex) {
           heating: "Yes",
           pets: "Yes",
           laundry: "Inside unit",
-          fees: "$5,555",
+          fees: 5555.25,
           sqft: 2000,
           elementary: "Yes",
           middle: "Yes",
           high: "Yes",
-          district: "Yes"
+          district: "Yes",
         },
         {
           number: 1,
@@ -39,13 +39,13 @@ exports.seed = function(knex) {
           heating: "Yes",
           pets: "Yes",
           laundry: "Inside unit",
-          fees: "$5,555",
+          fees: 5555.0,
           sqft: 2000,
           elementary: "Yes",
           middle: "Yes",
           high: "Yes",
-          district: "Yes"
-        }
+          district: "Yes",
+        },
       ]);
     });
 };

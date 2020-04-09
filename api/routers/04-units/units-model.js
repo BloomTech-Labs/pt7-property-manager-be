@@ -9,35 +9,31 @@ module.exports = {
 };
 
 function addUnit(unit) {
-  return db("unit")
+  return db("units")
     .insert(unit, "id")
-    .then(ids => ({ id: ids[0] }));
+    .then((ids) => ({ id: ids[0] }));
 }
 
 function findAllUnits() {
-  return db("unit")
-    .join("user as u", "u.id", "unit.renter_id")
-    .join("lease_id as l", "l.id", "unit.lease_id")
-    .join("property as p", "p.id", "unit.property_id");
+  return db("units")
+    .join("users as u", "u.id", "units.renter_id")
+    .join("leaseterms as l", "l.id", "units.lease_id")
+    .join("property as p", "p.id", "units.property_id");
 }
 
 function findUnitById(id) {
-  return db("unit")
-    .join("user as u", "u.id", "unit.renter_id")
-    .join("lease_id as l", "l.id", "unit.lease_id")
-    .join("property as p", "p.id", "unit.property_id")
+  return db("units")
+    .join("users as u", "u.id", "units.renter_id")
+    .join("leaseterms as l", "l.id", "units.lease_id")
+    .join("property as p", "p.id", "units.property_id")
     .where({ id })
     .first();
 }
 
 function updateUnit(changes, id) {
-  return db("unit")
-    .where({ id })
-    .update(changes);
+  return db("units").where({ id }).update(changes);
 }
 
 function removeUnit(id) {
-  return db("unit")
-    .where({ id })
-    .delete();
+  return db("units").where({ id }).delete();
 }
