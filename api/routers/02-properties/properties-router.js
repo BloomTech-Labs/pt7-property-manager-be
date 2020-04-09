@@ -6,6 +6,7 @@ const router = express.Router();
 // Authenticate
 const authenticate = require("../00-auth/restricted-middleware");
 const roleCheck = require("../00-auth/role-check");
+const deleteMiddleware = require("../00-auth/delete-middleware");
 
 router.get("/", (req, res) => {
   // Auth
@@ -59,7 +60,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.put("/:id", authenticate, roleCheck, (req, res) => {
+router.put("/:id", authenticate, roleCheck, deleteMiddleware, (req, res) => {
   // Auth
   //  Edits property by ID
   const id = req.params.id;
@@ -113,7 +114,7 @@ router.get("/manager/:id", (req, res) => {
     });
 });
 
-router.delete("/:id", authenticate, roleCheck, (req, res) => {
+router.delete("/:id", authenticate, roleCheck, deleteMiddleware, (req, res) => {
   // Auth
   // Deletes property by ID
   const id = req.params.id;

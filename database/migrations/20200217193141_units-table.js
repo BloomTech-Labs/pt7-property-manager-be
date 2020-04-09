@@ -5,7 +5,6 @@ exports.up = async function (knex) {
     tbl
       .integer("renter_id")
       .unsigned()
-      .notNullable()
       .references("id")
       .inTable("users")
       .onUpdate("CASCADE")
@@ -13,7 +12,6 @@ exports.up = async function (knex) {
     tbl
       .integer("lease_id")
       .unsigned()
-      .notNullable()
       .references("id")
       .inTable("leaseterms")
       .onUpdate("CASCADE")
@@ -27,6 +25,7 @@ exports.up = async function (knex) {
       .onUpdate("CASCADE")
       .onDelete("CASCADE");
     tbl.string("description", 255);
+    tbl.integer("listing_price");
     tbl.date("date_available").notNullable();
     tbl.string("parking", 128);
     tbl.string("type", 128).notNullable();
