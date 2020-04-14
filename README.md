@@ -12,11 +12,11 @@
 
 ## Contributors
 
-| [Darren Carrillo](https://github.com/darrenjcarrillo) | [Sage Jordan](https://github.com/sage-jordan) | [Carlos Mitchell](https://github.com/nebadon1) | [Caleb Redd](https://github.com/calebredd) | [Edward Ridgely](https://github.com/etridgely) | [Carlos Sanchez](https://github.com/lohrem) |
-| :---------------------------------------------------: | :-------------------------------------------: | :--------------------------------------------: | :----------------------------------------: | :--------------------------------------------: | :-----------------------------------------: |
-| [<img src="https://ca.slack-edge.com/T4JUEB3ME-ULZR0L7JL-cd8c0f05f9eb-512" width = "200" />](https://github.com/darrenjcarrillo) | [<img src="https://ca.slack-edge.com/T4JUEB3ME-UG0RALX16-4eb2d98cbeb3-512" width = "200" />](https://github.com/sage-jordan) | [<img src="https://ca.slack-edge.com/T4JUEB3ME-UGWPH7DJ4-a001bca030c9-512" width = "200" />](https://github.com/nebadon1) | [<img src="https://ca.slack-edge.com/T4JUEB3ME-UGZNPKR62-adb84fddada3-512" width = "200" />](https://github.com/calebredd) | [<img src="https://ca.slack-edge.com/T4JUEB3ME-UJ7M4NLTD-5fb21401f57a-512" width = "200" />](https://github.com/etridgely) | [<img src="https://ca.slack-edge.com/T4JUEB3ME-UF3J9R4LD-0bb156893420-512" width = "200" />](https://github.com/lohrem) |
-| [<img src="https://github.com/favicon.ico" width="15">](https://github.com/darrenjcarrillo)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/sage-jordan)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/nebadon1)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/calebredd)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/etridgely)             |         [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/lohrem)             |
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/darrenjcarrillo) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/sage-jordan-3682a2a0/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/carlosamitchell/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/caleb-redd-592423120/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/edwardridgely/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
+|                                      [Darren Carrillo](https://github.com/darrenjcarrillo)                                       |                                             [Sage Jordan](https://github.com/sage-jordan)                                             |                                          [Carlos Mitchell](https://github.com/nebadon1)                                          |                                              [Caleb Redd](https://github.com/calebredd)                                               |                                         [Edward Ridgely](https://github.com/etridgely)                                         |                                       [Carlos Sanchez](https://github.com/lohrem)                                       |
+| :------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------: |
+| [<img src="https://ca.slack-edge.com/T4JUEB3ME-ULZR0L7JL-cd8c0f05f9eb-512" width = "200" />](https://github.com/darrenjcarrillo) |     [<img src="https://ca.slack-edge.com/T4JUEB3ME-UG0RALX16-4eb2d98cbeb3-512" width = "200" />](https://github.com/sage-jordan)      |    [<img src="https://ca.slack-edge.com/T4JUEB3ME-UGWPH7DJ4-a001bca030c9-512" width = "200" />](https://github.com/nebadon1)     |      [<img src="https://ca.slack-edge.com/T4JUEB3ME-UGZNPKR62-adb84fddada3-512" width = "200" />](https://github.com/calebredd)       |   [<img src="https://ca.slack-edge.com/T4JUEB3ME-UJ7M4NLTD-5fb21401f57a-512" width = "200" />](https://github.com/etridgely)   | [<img src="https://ca.slack-edge.com/T4JUEB3ME-UF3J9R4LD-0bb156893420-512" width = "200" />](https://github.com/lohrem) |
+|                   [<img src="https://github.com/favicon.ico" width="15">](https://github.com/darrenjcarrillo)                    |                       [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/sage-jordan)                        |                      [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/nebadon1)                       |                        [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/calebredd)                         |                     [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/etridgely)                     |                   [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/lohrem)                   |
+| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/darrenjcarrillo)  | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/sage-jordan-3682a2a0/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/carlosamitchell/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/caleb-redd-592423120/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/edwardridgely/) |      [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)      |
 
 <br>
 <br>
@@ -65,14 +65,15 @@ To get the server running locally:
 
 #### Properties Routes
 
-| Method | Endpoint                  | Access Control                          | Description                    |
-| ------ | ------------------------- | --------------------------------------- | ------------------------------ |
-| GET    | `/properties`             | All users                               | Returns all properties.        |
-| POST   | `/properties`             | Logged in Manager                       | Creates a property.            |
-| GET    | `/properties/:id`         | All users                               | Returns property by ID         |
-| PUT    | `/properties/:id`         | Manager can edit their own properties   | Modify an existing property.   |
-| GET    | `/properties/manager/:id` | All users                               | Returns property by manager ID |
-| DELETE | `/properties/:id`         | Manager can delete their own properties | Delete a property.             |
+| Method | Endpoint                  | Access Control                          | Description                      |
+| ------ | ------------------------- | --------------------------------------- | -------------------------------- |
+| GET    | `/properties`             | All users                               | Returns all properties.          |
+| POST   | `/properties`             | Logged in Manager                       | Creates a property.              |
+| GET    | `/properties/:id`         | All users                               | Returns property by ID           |
+| PUT    | `/properties/:id`         | Manager can edit their own properties   | Modify an existing property.     |
+| GET    | `/properties/manager/:id` | All users                               | Returns property by manager ID   |
+| DELETE | `/properties/:id`         | Manager can delete their own properties | Delete a property.               |
+| GET    | `/:id/units`              | All users                               | Returns property with all units. |
 
 #### Units Routes
 
@@ -112,6 +113,31 @@ To get the server running locally:
   "img": "url.here",
   "manager_id": 1
 },
+```
+
+#### 2️⃣ UNITS
+
+```
+{
+  "number": 1,
+  "renter_id": 1,
+  "lease_id": 1,
+  "property_id": 1,
+  "description": "State of the art kitchen, will accommodate people with fast metabolism",
+  "date_available": "2020-02-11",
+  "parking": "No parking",
+  "type": "Type 2",
+  "cooling": "centralized",
+  "heating": "Yes",
+  "pets": "Yes",
+  "laundry": "Inside unit",
+  "fees": 5555.25,
+  "sqft": 2000,
+  "elementary": "Yes",
+  "middle": "Yes",
+  "high": "Yes",
+  "district": "Yes",
+}
 ```
 
 ## 2️⃣ Actions
