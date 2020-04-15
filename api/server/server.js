@@ -29,6 +29,6 @@ server.use("/users", userRouter);
 server.use("/properties", propertiesRouter);
 server.use("/units", unitsRouter);
 server.use("/leaseterms", leaseTermsRouter);
-server.use("/appplications", applicationsRouter);
+server.use("/applications", applicationsRouter);
 
 module.exports = server;

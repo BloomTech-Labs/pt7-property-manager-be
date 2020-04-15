@@ -47,9 +47,9 @@ router.get("/:id", (req, res) => {
 
 router.put("/:id", (req, res) => {
   const id = req.params.id;
-  const lease_term = req.body;
+  const lease = req.body;
   lease_term
-    .updateLeaseTerm(lease_term, id)
+    .updateLeaseTerm(lease, id)
     .then((updated) => {
       if (updated) {
         res.status(200).json({ updated });
