@@ -71,19 +71,39 @@ To get the server running locally:
 | POST   | `/properties`             | Logged in Manager                       | Creates a property.              |
 | GET    | `/properties/:id`         | All users                               | Returns property by ID           |
 | PUT    | `/properties/:id`         | Manager can edit their own properties   | Modify an existing property.     |
-| GET    | `/properties/manager/:id` | All users                               | Returns property by manager ID   |
+| GET    | `/properties/manager/:id` | All users                               | Returns property by manager ID.  |
 | DELETE | `/properties/:id`         | Manager can delete their own properties | Delete a property.               |
 | GET    | `/:id/units`              | All users                               | Returns property with all units. |
 
 #### Units Routes
 
-| Method | Endpoint     | Access Control                    | Description                  |
-| ------ | ------------ | --------------------------------- | ---------------------------- |
-| GET    | `/units`     | All users                         | Returns all units.           |
-| POST   | `/units`     | Logged in Manager                 | Creates a property.          |
-| GET    | `/units/:id` | All users                         | Returns property by ID       |
-| PUT    | `/units/:id` | Manager can edit their own unit   | Modify an existing property. |
-| DELETE | `/units/:id` | Manager can delete their own unit | Delete a property.           |
+| Method | Endpoint     | Access Control                    | Description              |
+| ------ | ------------ | --------------------------------- | ------------------------ |
+| GET    | `/units`     | All users                         | Returns all units.       |
+| POST   | `/units`     | Logged in Manager                 | Creates a unit.          |
+| GET    | `/units/:id` | All users                         | Returns unit by ID.      |
+| PUT    | `/units/:id` | Manager can edit their own unit   | Modify an existing unit. |
+| DELETE | `/units/:id` | Manager can delete their own unit | Delete a unit.           |
+
+#### Lease Terms Routes
+
+| Method | Endpoint          | Access Control | Description                    |
+| ------ | ----------------- | -------------- | ------------------------------ |
+| GET    | `/leaseterms`     | All users      | Returns all lease terms.       |
+| POST   | `/leaseterms`     | All users      | Creates a lease term.          |
+| GET    | `/leaseterms/:id` | All users      | Returns lease term by ID.      |
+| PUT    | `/leaseterms/:id` | All users      | Modify an existing lease term. |
+| DELETE | `/leaseterms/:id` | All users      | Delete a lease term.           |
+
+#### Applications Routes
+
+| Method | Endpoint            | Access Control | Description                     |
+| ------ | ------------------- | -------------- | ------------------------------- |
+| GET    | `/applications`     | All users      | Returns all applications.       |
+| POST   | `/applications`     | All users      | Creates a application.          |
+| GET    | `/applications/:id` | All users      | Returns application by ID       |
+| PUT    | `/applications/:id` | All users      | Modify an existing application. |
+| DELETE | `/applications/:id` | All users      | Delete a application.           |
 
 # Data Model
 
@@ -103,7 +123,7 @@ To get the server running locally:
 }
 ```
 
-#### 2️⃣ PROPERTIES
+#### PROPERTIES
 
 ---
 
@@ -115,7 +135,7 @@ To get the server running locally:
 },
 ```
 
-#### 2️⃣ UNITS
+#### UNITS
 
 ```
 {
@@ -140,7 +160,35 @@ To get the server running locally:
 }
 ```
 
-## 2️⃣ Actions
+#### LEASE TERMS
+
+```
+{
+  "payment_due_date": "2020-02-11",
+  "lease_start_date": "2020-02-11",
+  "lease_end_date": "2021-02-11",
+  "lease_term": "12",
+  "monthly_rent": 1000,
+  "security_deposit": 2000
+}
+```
+
+#### APPLICATIONS
+
+```
+{
+  "address": "cash",
+  "date_of_birth": "1985-10-11",
+  "dl_number": "132323232",
+  "social_security": "323-85-4544",
+  "document": "url",
+  "status": "approved"
+}
+```
+
+#### Actions
+
+## Users
 
 `addUser(user)` -> Creates a new user
 
@@ -158,19 +206,60 @@ To get the server running locally:
 <br>
 <br>
 <br>
+
+## Properties
+
 `add(property)` -> Adds property
 
 `find()` -> Gets all properties
 
-`findByid(id)` -> Gets property by id
+`findByid(id)` -> Gets property by ID
 
-`update(changes, id)` -> Updates property
+`update(changes, id)` -> Updates property by ID
 
-`remove(id)` -> Deletes property by id
+`remove(id)` -> Deletes property by ID
 
-`findManagersProperties(id)` -> Gets all properties by manager id
+`findManagersProperties(id)` -> Gets all properties by manager ID
 
-## 3️⃣ Environment Variables
+## Lease Terms
+
+`addLeaseTerm()` -> Adds lease term
+
+`findAllLeaseTerm()` -> Gets all lease terms
+
+`findLeaseTermById(id)` -> Gets lease term by ID
+
+`updateLeaseTerm(id)` -> Updates lease term by ID
+
+`removeLeaseTerm(id)` -> Deletes lease term by ID
+
+## Units
+
+`addUnit()` -> Adds unit
+
+`findAllUnits()` -> Gets all units
+
+`findUnitById(id)` -> Gets unit by ID
+
+`updateUnit(id)` -> Updates unit by ID
+
+`removeUnit(id)` -> Deletes unit by ID
+
+`getPropertiesUnits(property_id)` -> Gets list of units associated with property by ID
+
+## Applications
+
+`addApp()` -> Adds application
+
+`findAllApps()` -> Gets all applications
+
+`findAppById(id)` -> Gets application by ID
+
+`updateApp(id)` -> Updates application by ID
+
+`removeApp(id)` -> Deletes application by ID
+
+#### 3️⃣ Environment Variables
 
 In order for the app to function correctly, the user must set up their own environment variables.
 
