@@ -4,7 +4,6 @@ const router = express.Router();
 
 const authenticate = require("../00-auth/restricted-middleware");
 const roleCheck = require("../00-auth/role-check");
-const deleteMiddleware = require("../00-auth/delete-middleware");
 
 router.get("/", (req, res) => {
   units
@@ -48,7 +47,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.put("/:id", authenticate, roleCheck, deleteMiddleware, (req, res) => {
+router.put("/:id", authenticate, roleCheck, (req, res) => {
   const id = req.params.id;
   const unit = req.body;
   units
@@ -67,7 +66,7 @@ router.put("/:id", authenticate, roleCheck, deleteMiddleware, (req, res) => {
     });
 });
 
-router.delete("/:id", authenticate, roleCheck, deleteMiddleware, (req, res) => {
+router.delete("/:id", authenticate, roleCheck, (req, res) => {
   const id = req.params.id;
   units
     .removeUnit(id)
