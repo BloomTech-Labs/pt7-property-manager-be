@@ -24,6 +24,14 @@ exports.up = async function (knex) {
       .inTable("property")
       .onUpdate("CASCADE")
       .onDelete("CASCADE");
+    tbl
+      .integer("manager_id")
+      .unsigned()
+      .notNullable()
+      .references("id")
+      .inTable("property")
+      .onUpdate("CASCADE")
+      .onDelete("CASCADE");
     tbl.string("description", 255);
     tbl.integer("listing_price");
     tbl.date("date_available").notNullable();
