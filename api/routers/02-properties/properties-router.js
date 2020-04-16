@@ -7,7 +7,7 @@ const router = express.Router();
 // Authenticate
 const authenticate = require("../00-auth/restricted-middleware");
 const roleCheck = require("../00-auth/role-check");
-const deleteMiddleware = require("../00-auth/delete-middleware");
+const propertyMiddleware = require("../00-auth/property-middleware");
 
 router.get("/", (req, res) => {
   // Auth
@@ -61,7 +61,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.put("/:id", authenticate, roleCheck, deleteMiddleware, (req, res) => {
+router.put("/:id", authenticate, roleCheck, propertyMiddleware, (req, res) => {
   // Auth
   //  Edits property by ID
   const id = req.params.id;
@@ -115,20 +115,26 @@ router.get("/manager/:id", (req, res) => {
     });
 });
 
-router.delete("/:id", authenticate, roleCheck, deleteMiddleware, (req, res) => {
-  // Auth
-  // Deletes property by ID
-  const id = req.params.id;
-  Properties.remove(id)
-    .then((nan) =>
-      res.status(204).json({ message: `Property ${id} has been deleted` })
-    )
-    .catch((err) =>
-      res
-        .status(500)
-        .json({ error: "Failed to delete property", err: err.message })
-    );
-});
+router.delete(
+  "/:id",
+  authenticate,
+  roleCheck,
+  propertyMiddleware,
+  (req, res) => {
+    // Auth
+    // Deletes property by ID
+    const id = req.params.id;
+    Properties.remove(id)
+      .then((nan) =>
+        res.status(204).json({ message: `Property ${id} has been deleted` })
+      )
+      .catch((err) =>
+        res
+          .status(500)
+          .json({ error: "Failed to delete property", err: err.message })
+      );
+  }
+);
 
 router.get("/:id/units", (req, res) => {
   const { id } = req.params;
