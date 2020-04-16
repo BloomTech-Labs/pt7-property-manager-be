@@ -9,10 +9,10 @@ const deleteMiddleware = require("../00-auth/delete-middleware");
 router.get("/", (req, res) => {
   units
     .findAllUnits()
-    .then(units => {
+    .then((units) => {
       res.status(200).json({ units });
     })
-    .catch(err =>
+    .catch((err) =>
       res
         .status(500)
         .json({ error: "Failed to get all units", err: err.message })
@@ -23,10 +23,10 @@ router.post("/", authenticate, roleCheck, (req, res) => {
   const unit = req.body;
   units
     .addUnit(unit)
-    .then(prop => {
+    .then((prop) => {
       res.status(200).json({ prop });
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).json({ err: err.message });
     });
 });
@@ -36,14 +36,14 @@ router.get("/:id", (req, res) => {
   const { id } = req.params;
   units
     .findUnitById(id)
-    .then(unit => {
+    .then((unit) => {
       if (unit) {
         res.status(200).json({ unit });
       } else {
         res.status(400).json({ message: "Please supply a valid ID" });
       }
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).json({ error: "Failed to get unit", err: err.message });
     });
 });
@@ -53,14 +53,14 @@ router.put("/:id", authenticate, roleCheck, deleteMiddleware, (req, res) => {
   const unit = req.body;
   units
     .updateUnit(unit, id)
-    .then(updated => {
+    .then((updated) => {
       if (updated) {
         res.status(200).json({ updated });
       } else {
         res.status(400).json({ message: "Please provide a valid id" });
       }
     })
-    .catch(err => {
+    .catch((err) => {
       res
         .status(500)
         .json({ err: err.message, message: "Error updating unit" });
@@ -71,10 +71,10 @@ router.delete("/:id", authenticate, roleCheck, deleteMiddleware, (req, res) => {
   const id = req.params.id;
   units
     .removeUnit(id)
-    .then(nan =>
+    .then((nan) =>
       res.status(204).json({ message: `Unit ${id} has been deleted` })
     )
-    .catch(err =>
+    .catch((err) =>
       res.status(500).json({ error: "Failed to delete unit", err: err.message })
     );
 });
