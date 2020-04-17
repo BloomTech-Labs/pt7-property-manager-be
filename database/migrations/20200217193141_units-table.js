@@ -29,7 +29,7 @@ exports.up = async function (knex) {
       .unsigned()
       .notNullable()
       .references("id")
-      .inTable("property")
+      .inTable("users")
       .onUpdate("CASCADE")
       .onDelete("CASCADE");
     tbl.string("description", 255);
