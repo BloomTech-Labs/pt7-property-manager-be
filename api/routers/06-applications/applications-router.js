@@ -2,6 +2,9 @@ const express = require("express");
 const applications = require("./applications-model");
 const router = express.Router();
 
+const authenticate = require("../00-auth/restricted-middleware");
+const roleCheck = require("../00-auth/role-check");
+
 router.post("/", (req, res) => {
   const app = req.body;
   applications
@@ -14,7 +17,7 @@ router.post("/", (req, res) => {
     });
 });
 
-router.get("/", (req, res) => {
+router.get("/", authenticate, roleCheck, (req, res) => {
   applications
     .findAllApps()
     .then((applications) => {
@@ -27,7 +30,7 @@ router.get("/", (req, res) => {
     );
 });
 
-router.get("/:id", (req, res) => {
+router.get("/:id", authenticate, roleCheck, (req, res) => {
   const { id } = req.params;
   applications
     .findAppById(id)
@@ -45,7 +48,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.put("/:id", (req, res) => {
+router.put("/:id", authenticate, roleCheck, (req, res) => {
   const id = req.params.id;
   const application = req.body;
   applications
@@ -64,7 +67,7 @@ router.put("/:id", (req, res) => {
     });
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", authenticate, roleCheck, (req, res) => {
   const id = req.params.id;
   applications
     .removeApp(id)
