@@ -97,14 +97,13 @@ To get the server running locally:
 
 #### Applications Routes
 
-| Method | Endpoint            | Access Control | Description                     |
-| ------ | ------------------- | -------------- | ------------------------------- |
-| GET    | `/applications`     | All users      | Returns all applications.       |
-| POST   | `/applications`     | All users      | Creates a application.          |
-| GET    | `/applications/:id` | All users      | Returns application by ID       |
-| PUT    | `/applications/:id` | All users      | Modify an existing application. |
-| DELETE | `/applications/:id` | All users      | Delete a application.           |
-
+| Method | Endpoint            | Access Control     | Description                     |
+| ------ | ------------------- | ------------------ | ------------------------------- |
+| GET    | `/applications`     | Logged in Managers | Returns all applications.       |
+| POST   | `/applications`     | All users          | Creates a application.          |
+| GET    | `/applications/:id` | Logged in Managers | Returns application by ID       |
+| PUT    | `/applications/:id` | Logged in Managers | Modify an existing application. |
+| DELETE | `/applications/:id` | Logged in Managers | Delete a application.           |
 # Data Model
 
 #### USERS
