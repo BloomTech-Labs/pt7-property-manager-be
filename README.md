@@ -49,14 +49,45 @@ To get the server running locally:
 
 #### Properties Routes
 
-| Method | Endpoint                 | Access Control    | Description                    |
-| ------ | ------------------------ | ----------------- | ------------------------------ |
-| GET    | `/properties`            | All users         | Returns all properties.        |
-| POST   | `/properties`            | Logged in Manager | Creates a property.            |
-| GET    | `/properties/:id`        | All users         | Returns property by ID         |
-| PUT    | `/properties/:id`        | Logged in Manager | Modify an existing property.   |
-| GET    | `properties/manager/:id` | All users         | Returns property by manager ID |
-| DELETE | `/properties/:id`        | Logged in Manager | Delete a property.             |
+| Method | Endpoint                  | Access Control                          | Description                      |
+| ------ | ------------------------- | --------------------------------------- | -------------------------------- |
+| GET    | `/properties`             | All users                               | Returns all properties.          |
+| POST   | `/properties`             | Logged in Manager                       | Creates a property.              |
+| GET    | `/properties/:id`         | All users                               | Returns property by ID           |
+| PUT    | `/properties/:id`         | Manager can edit their own properties   | Modify an existing property.     |
+| GET    | `/properties/manager/:id` | All users                               | Returns property by manager ID.  |
+| DELETE | `/properties/:id`         | Manager can delete their own properties | Delete a property.               |
+| GET    | `/:id/units`              | All users                               | Returns property with all units. |
+
+#### Units Routes
+
+| Method | Endpoint     | Access Control                    | Description              |
+| ------ | ------------ | --------------------------------- | ------------------------ |
+| GET    | `/units`     | All users                         | Returns all units.       |
+| POST   | `/units`     | Logged in Manager                 | Creates a unit.          |
+| GET    | `/units/:id` | All users                         | Returns unit by ID.      |
+| PUT    | `/units/:id` | Manager can edit their own unit   | Modify an existing unit. |
+| DELETE | `/units/:id` | Manager can delete their own unit | Delete a unit.           |
+
+#### Lease Terms Routes
+
+| Method | Endpoint          | Access Control | Description                    |
+| ------ | ----------------- | -------------- | ------------------------------ |
+| GET    | `/leaseterms`     | All users      | Returns all lease terms.       |
+| POST   | `/leaseterms`     | All users      | Creates a lease term.          |
+| GET    | `/leaseterms/:id` | All users      | Returns lease term by ID.      |
+| PUT    | `/leaseterms/:id` | All users      | Modify an existing lease term. |
+| DELETE | `/leaseterms/:id` | All users      | Delete a lease term.           |
+
+#### Applications Routes
+
+| Method | Endpoint            | Access Control     | Description                     |
+| ------ | ------------------- | ------------------ | ------------------------------- |
+| GET    | `/applications`     | Logged in Managers | Returns all applications.       |
+| POST   | `/applications`     | All users          | Creates a application.          |
+| GET    | `/applications/:id` | Logged in Managers | Returns application by ID       |
+| PUT    | `/applications/:id` | Logged in Managers | Modify an existing application. |
+| DELETE | `/applications/:id` | Logged in Managers | Delete a application.           |
 
 # Data Model
 
