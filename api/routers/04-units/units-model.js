@@ -19,10 +19,9 @@ function addUnit(unit) {
 function findAllUnits() {
   return (
     db("units")
-      // .select("units.id","number","property_id","description","date_available","parking","type","cooling","heating","pets","laundry","fees","sqft","elementary","middle","high","district","p.img","address","city","state","zip","country","manager_id")
-      .join("users as u", "units.manager_id", "=", "u.id")
-      // .join("leaseterms as l", "units.lease_id", "=", "l.id")
-      .join("property as p", "units.property_id", "=", "p.id")
+    .select("units.id","number","renter_id","lease_id","property_id","units.manager_id","description","listing_price","date_available","parking","type","cooling","heating","pets","laundry","fees","sqft","elementary","middle","high","district","p.img","address","city","state","zip","country","firstName","lastName")
+    .join("users as u", "units.manager_id", "=", "u.id")
+    .join("property as p", "units.property_id", "=", "p.id")
   );
 
 }
@@ -33,10 +32,8 @@ function findUnitById(id) {
     db("units")
       .select("units.id","number","renter_id","lease_id","property_id","units.manager_id","description","listing_price","date_available","parking","type","cooling","heating","pets","laundry","fees","sqft","elementary","middle","high","district","p.img","address","city","state","zip","country","firstName","lastName")
       .join("users as u", "units.manager_id", "=", "u.id")
-      // .join("leaseterms as l", "units.lease_id", "=", "l.id")
       .join("property as p", "units.property_id", "=", "p.id")
       .where({ "units.id": id })
-      // .where({id})
       .first()
   );
 }
@@ -47,10 +44,8 @@ function updateUnit(changes, id) {
 
 function removeUnit(id) {
   return db("unit").where({ id }).delete();
-
 }
 
 function getPropertiesUnits(id) {
   return db("units").where({ property_id: id });
-
 }
