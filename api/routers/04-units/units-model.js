@@ -39,11 +39,11 @@ function findUnitById(id) {
 }
 
 function updateUnit(changes, id) {
-  return db("unit").where({ id }).update(changes);
+  return db("units").where({ id }).update(changes);
 }
 
 function removeUnit(id) {
-  return db("unit").where({ id }).delete();
+  return db("units").where({ id }).delete();
 }
 
 function getPropertiesUnits(id) {
