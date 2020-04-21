@@ -10,6 +10,22 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/fc736139272b3e317155/test_coverage)](https://codeclimate.com/github/Lambda-School-Labs/pt7-property-manager-be/test_coverage)
 
+## Contributors
+
+|                                      [Darren Carrillo](https://github.com/darrenjcarrillo)                                       |                                             [Sage Jordan](https://github.com/sage-jordan)                                             |                                          [Carlos Mitchell](https://github.com/nebadon1)                                          |                                              [Caleb Redd](https://github.com/calebredd)                                               |                                         [Edward Ridgely](https://github.com/etridgely)                                         |                                       [Carlos Sanchez](https://github.com/lohrem)                                       |
+| :------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------: |
+| [<img src="https://ca.slack-edge.com/T4JUEB3ME-ULZR0L7JL-cd8c0f05f9eb-512" width = "200" />](https://github.com/darrenjcarrillo) |     [<img src="https://ca.slack-edge.com/T4JUEB3ME-UG0RALX16-4eb2d98cbeb3-512" width = "200" />](https://github.com/sage-jordan)      |    [<img src="https://ca.slack-edge.com/T4JUEB3ME-UGWPH7DJ4-a001bca030c9-512" width = "200" />](https://github.com/nebadon1)     |      [<img src="https://ca.slack-edge.com/T4JUEB3ME-UGZNPKR62-adb84fddada3-512" width = "200" />](https://github.com/calebredd)       |   [<img src="https://ca.slack-edge.com/T4JUEB3ME-UJ7M4NLTD-5fb21401f57a-512" width = "200" />](https://github.com/etridgely)   | [<img src="https://ca.slack-edge.com/T4JUEB3ME-UF3J9R4LD-0bb156893420-512" width = "200" />](https://github.com/lohrem) |
+|                   [<img src="https://github.com/favicon.ico" width="15">](https://github.com/darrenjcarrillo)                    |                       [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/sage-jordan)                        |                      [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/nebadon1)                       |                        [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/calebredd)                         |                     [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/etridgely)                     |                   [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/lohrem)                   |
+| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/darrenjcarrillo)  | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/sage-jordan-3682a2a0/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/carlosamitchell/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/caleb-redd-592423120/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/edwardridgely/) |      [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)      |
+
+<br>
+<br>
+
+![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
+![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
+![npm](https://img.shields.io/node/v/@cycle/core)
+![Node.js](https://img.shields.io/npm/v/@cycle/core)
+
 # API Documentation
 
 #### 1️⃣ Backend delpoyed at Heroku (https://property-manager-be.herokuapp.com/) <br>
@@ -88,7 +104,6 @@ To get the server running locally:
 | GET    | `/applications/:id` | Logged in Managers | Returns application by ID       |
 | PUT    | `/applications/:id` | Logged in Managers | Modify an existing application. |
 | DELETE | `/applications/:id` | Logged in Managers | Delete a application.           |
-
 # Data Model
 
 #### USERS
@@ -107,7 +122,7 @@ To get the server running locally:
 }
 ```
 
-#### 2️⃣ PROPERTIES
+#### PROPERTIES
 
 ---
 
@@ -119,7 +134,60 @@ To get the server running locally:
 },
 ```
 
-## 2️⃣ Actions
+#### UNITS
+
+```
+{
+  "number": 1,
+  "renter_id": 1,
+  "lease_id": 1,
+  "property_id": 1,
+  "description": "State of the art kitchen, will accommodate people with fast metabolism",
+  "date_available": "2020-02-11",
+  "parking": "No parking",
+  "type": "Type 2",
+  "cooling": "centralized",
+  "heating": "Yes",
+  "pets": "Yes",
+  "laundry": "Inside unit",
+  "fees": 5555.25,
+  "sqft": 2000,
+  "elementary": "Yes",
+  "middle": "Yes",
+  "high": "Yes",
+  "district": "Yes",
+}
+```
+
+#### LEASE TERMS
+
+```
+{
+  "payment_due_date": "2020-02-11",
+  "lease_start_date": "2020-02-11",
+  "lease_end_date": "2021-02-11",
+  "lease_term": "12",
+  "monthly_rent": 1000,
+  "security_deposit": 2000
+}
+```
+
+#### APPLICATIONS
+
+```
+{
+  "address": "cash",
+  "date_of_birth": "1985-10-11",
+  "dl_number": "132323232",
+  "social_security": "323-85-4544",
+  "document": "url",
+  "status": "approved"
+}
+```
+
+#### Actions
+
+## Users
 
 `addUser(user)` -> Creates a new user
 
@@ -137,19 +205,60 @@ To get the server running locally:
 <br>
 <br>
 <br>
+
+## Properties
+
 `add(property)` -> Adds property
 
 `find()` -> Gets all properties
 
-`findByid(id)` -> Gets property by id
+`findByid(id)` -> Gets property by ID
 
-`update(changes, id)` -> Updates property
+`update(changes, id)` -> Updates property by ID
 
-`remove(id)` -> Deletes property by id
+`remove(id)` -> Deletes property by ID
 
-`findManagersProperties(id)` -> Gets all properties by manager id
+`findManagersProperties(id)` -> Gets all properties by manager ID
 
-## 3️⃣ Environment Variables
+## Lease Terms
+
+`addLeaseTerm()` -> Adds lease term
+
+`findAllLeaseTerm()` -> Gets all lease terms
+
+`findLeaseTermById(id)` -> Gets lease term by ID
+
+`updateLeaseTerm(id)` -> Updates lease term by ID
+
+`removeLeaseTerm(id)` -> Deletes lease term by ID
+
+## Units
+
+`addUnit()` -> Adds unit
+
+`findAllUnits()` -> Gets all units
+
+`findUnitById(id)` -> Gets unit by ID
+
+`updateUnit(id)` -> Updates unit by ID
+
+`removeUnit(id)` -> Deletes unit by ID
+
+`getPropertiesUnits(property_id)` -> Gets list of units associated with property by ID
+
+## Applications
+
+`addApp()` -> Adds application
+
+`findAllApps()` -> Gets all applications
+
+`findAppById(id)` -> Gets application by ID
+
+`updateApp(id)` -> Updates application by ID
+
+`removeApp(id)` -> Deletes application by ID
+
+#### 3️⃣ Environment Variables
 
 In order for the app to function correctly, the user must set up their own environment variables.
 

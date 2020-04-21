@@ -6,14 +6,16 @@ module.exports = {
   findUnitById,
   updateUnit,
   removeUnit,
+  getPropertiesUnits,
 };
 
 function addUnit(unit) {
-  return db("unit")
+  return db("units")
     .insert(unit, "id")
     .then((ids) => ({ id: ids[0] }));
 }
 
+// prettier-ignore
 function findAllUnits() {
   return (
     db("units")
@@ -22,6 +24,7 @@ function findAllUnits() {
       // .join("leaseterms as l", "units.lease_id", "=", "l.id")
       .join("property as p", "units.property_id", "=", "p.id")
   );
+
 }
 
 // prettier-ignore
@@ -44,4 +47,10 @@ function updateUnit(changes, id) {
 
 function removeUnit(id) {
   return db("unit").where({ id }).delete();
+
+}
+
+function getPropertiesUnits(id) {
+  return db("units").where({ property_id: id });
+
 }
