@@ -4,6 +4,7 @@ require("dotenv").config();
 module.exports = (req, res, next) => {
   const token = req.headers.authorization;
 
+  console.log(`THIS IS TOKEN`, token);
   if (token) {
     const secret = process.env.JWT_SECRET;
 
