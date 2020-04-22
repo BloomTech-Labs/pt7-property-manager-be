@@ -1,3 +1,4 @@
+//prettier-ignore
 exports.up = async function (knex) {
   await knex.schema.createTable("applications", (tbl) => {
     tbl.increments();
@@ -17,14 +18,7 @@ exports.up = async function (knex) {
     tbl.string("social_security", 64).notNullable();
     tbl.string("document").notNullable();
     tbl.string("status", 128).notNullable();
-    tbl
-      .integer("unit_id")
-      .unsigned()
-      .notNullable()
-      .references("id")
-      .inTable("units")
-      .onUpdate("CASCADE")
-      .onDelete("CASCADE");
+    tbl.integer("unit_id").unsigned().notNullable().references("id").inTable("units").onUpdate("CASCADE").onDelete("CASCADE");
   });
 };
 
