@@ -38,6 +38,6 @@ jobs:
           # Run our `coverage` command from our `package.json`
           coverageCommand: npm run coverage
           # By default, this looks for a `coverage` folder in the root of your project, but you may need to change this
-          coverageLocations: "./coverage/lcov.info:info"
+          coverageLocations: "./coverage/clover.xml:clover"
           # Great for troubleshooting
           debug: true
