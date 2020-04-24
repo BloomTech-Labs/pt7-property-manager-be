@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1587691963030" clover="3.2.0">
-  <project timestamp="1587691963030" name="All files">
+<coverage generated="1587696685607" clover="3.2.0">
+  <project timestamp="1587696685607" name="All files">
     <metrics statements="682" coveredstatements="126" conditionals="411" coveredconditionals="2" methods="259" coveredmethods="5" elements="1352" coveredelements="133" complexity="0" loc="682" ncloc="682" packages="14" files="44" classes="44"/>
     <package name="pt7-property-manager-be">
       <metrics statements="7" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1"/>
@@ -14,7 +14,7 @@
       </file>
       <file name="knexfile.js" path="C:\Users\1337\Lambda\Property Manager\pt7-property-manager-be\knexfile.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="3" count="5" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
       </file>
     </package>
@@ -57,7 +57,7 @@
       </file>
       <file name="id-check.js" path="C:\Users\1337\Lambda\Property Manager\pt7-property-manager-be\api\routers\00-auth\id-check.js">
         <metrics statements="6" coveredstatements="1" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="2" type="stmt"/>
+        <line num="1" count="1" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
         <line num="4" count="0" type="cond" truecount="0" falsecount="4"/>
@@ -80,9 +80,9 @@
       </file>
       <file name="restricted-middleware.js" path="C:\Users\1337\Lambda\Property Manager\pt7-property-manager-be\api\routers\00-auth\restricted-middleware.js">
         <metrics statements="13" coveredstatements="3" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
         <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
@@ -136,8 +136,8 @@
       <metrics statements="58" coveredstatements="16" conditionals="12" coveredconditionals="0" methods="25" coveredmethods="2"/>
       <file name="users-model.js" path="C:\Users\1337\Lambda\Property Manager\pt7-property-manager-be\api\routers\01-users\users-model.js">
         <metrics statements="10" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="2"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
         <line num="21" count="1" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
@@ -149,17 +149,17 @@
       </file>
       <file name="users-router.js" path="C:\Users\1337\Lambda\Property Manager\pt7-property-manager-be\api\routers\01-users\users-router.js">
         <metrics statements="48" coveredstatements="12" conditionals="12" coveredconditionals="0" methods="17" coveredmethods="0"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="10" count="2" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
-        <line num="23" count="2" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
@@ -167,7 +167,7 @@
         <line num="30" count="0" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
-        <line num="40" count="2" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
         <line num="42" count="0" type="stmt"/>
         <line num="43" count="0" type="stmt"/>
         <line num="45" count="0" type="stmt"/>
@@ -175,7 +175,7 @@
         <line num="47" count="0" type="stmt"/>
         <line num="49" count="0" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
-        <line num="59" count="2" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
         <line num="61" count="0" type="stmt"/>
         <line num="62" count="0" type="stmt"/>
         <line num="65" count="0" type="cond" truecount="0" falsecount="2"/>
@@ -191,12 +191,12 @@
         <line num="87" count="0" type="stmt"/>
         <line num="89" count="0" type="stmt"/>
         <line num="93" count="0" type="stmt"/>
-        <line num="100" count="2" type="stmt"/>
+        <line num="100" count="1" type="stmt"/>
         <line num="102" count="0" type="stmt"/>
         <line num="103" count="0" type="stmt"/>
         <line num="105" count="0" type="stmt"/>
         <line num="108" count="0" type="stmt"/>
-        <line num="112" count="2" type="stmt"/>
+        <line num="112" count="1" type="stmt"/>
       </file>
     </package>
     <package name="pt7-property-manager-be.api.routers.02-properties">
@@ -669,10 +669,10 @@
       <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
       <file name="db-config.js" path="C:\Users\1337\Lambda\Property Manager\pt7-property-manager-be\database\db-config.js">
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
-        <line num="1" count="5" type="stmt"/>
-        <line num="3" count="5" type="stmt"/>
-        <line num="5" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="7" count="5" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="5" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="4" type="stmt"/>
       </file>
     </package>
     <package name="pt7-property-manager-be.database.migrations">
