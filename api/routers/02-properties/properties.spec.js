@@ -1,15 +1,15 @@
-// const request = require("supertest");
-// const propertiesRouter = require("./properties-router");
+const request = require("supertest");
+const propertiesRouter = require("./properties-router");
 
-// describe("Properties Router /", () => {
-//   it("should return 200", () => {
-//     request(propertiesRouter)
-//       .get("/")
-//       .then(res => {
-//         expect(res.status).toBe(200);
-//       });
-//   });
-// });
+describe("Properties Router /", () => {
+  it("should return 200", () => {
+    request(propertiesRouter)
+      .get("/")
+      .then(res => {
+        expect(res.status).toBe(200);
+      });
+  });
+});
 
 // describe("Get all properties by manager id /:id", () => {
 //   it("should return 200 ", () => {
