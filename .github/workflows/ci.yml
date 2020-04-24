@@ -38,5 +38,6 @@ jobs:
           # Run our `coverage` command from our `package.json`
           coverageCommand: npm run coverage
           # By default, this looks for a `coverage` folder in the root of your project, but you may need to change this
+          coverageLocations: "./pt7-property-manager-be/coverage/lcov.info:info"
           # Great for troubleshooting
           debug: true
