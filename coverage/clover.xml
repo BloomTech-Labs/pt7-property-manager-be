@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1587604585310" clover="3.2.0">
-  <project timestamp="1587604585310" name="All files">
+<coverage generated="1587691963030" clover="3.2.0">
+  <project timestamp="1587691963030" name="All files">
     <metrics statements="682" coveredstatements="126" conditionals="411" coveredconditionals="2" methods="259" coveredmethods="5" elements="1352" coveredelements="133" complexity="0" loc="682" ncloc="682" packages="14" files="44" classes="44"/>
     <package name="pt7-property-manager-be">
       <metrics statements="7" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1"/>
