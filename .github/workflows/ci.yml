@@ -32,8 +32,12 @@ jobs:
       - uses: paambaati/codeclimate-action@v2.4.0
         env:
 
-        # An environment variable, the value is a GitHub repo secret
+          # An environment variable, the value is a GitHub repo secret
           CC_TEST_REPORTER_ID: ${{ secrets.CodeClimateReporterId }}
         with:
-        # Run our `coverage` command from our `package.json`
+          # Run our `coverage` command from our `package.json`
           coverageCommand: npm run coverage
+          # By default, this looks for a `coverage` folder in the root of your project, but you may need to change this
+          coverageLocations: "./pt7-property-manager-be/coverage/lcov.info:info"
+          # Great for troubleshooting
+          debug: true
